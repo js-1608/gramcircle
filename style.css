@@ -1,0 +1,112 @@
+/* Styles for the sidebar */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #000b34;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar .brand {
+    color: #ffd700;
+    margin: 20px 0PX;
+}
+
+.sidebar img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.create-new {
+    padding: 8px
+}
+
+.sidebar .create-new:hover,
+.create-new:active {
+    background-color: #ffd700;
+    color: #000b34;
+    border-radius: 5px;
+}
+
+.company-logo-div {
+    background-color: rgba(230, 231, 233, 0.385);
+    border: 1px solid rgba(214, 212, 207, 0.56);
+    padding: 3%;
+}
+
+.company-logo-text {
+    color: white;
+}
+
+/* Mobile view styles */
+.mobile-menu {
+    display: none;
+}
+
+/* JavaScript sliding menu for mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: 10px;
+    }
+
+
+
+    .sidebar ul li a span {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+    }
+
+    .mobile-menu .btn-toggle {
+        background-color: #ffd700;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .sidebar-collapsed {
+        width: 250px;
+        transition: width 0.3s;
+    }
+
+    .sidebar-collapsed ul li a span {
+        display: inline;
+    }
+    .display_mobile_block{
+        display: none;
+    }
+}
