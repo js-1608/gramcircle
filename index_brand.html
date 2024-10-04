@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Sidebar styles */
+        body {
+            background-color: #e4e0e0;
+        }
+
+        .sidebar {
+            background-color: #050A30;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            padding-top: 20px;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a {
+            color: #fff;
+            padding: 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar a:hover , .sidebar a.active {
+            background-color: #e4e0e0;
+            color: black;
+            border-radius: 30px 0 0  30px;
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        /* Content area */
+        .content {
+            margin-left: 250px;
+
+        }
+
+        .header {
+            padding: 10px;
+            border-bottom: 1px solid black;
+
+        }
+.sidecut{
+    position: absolute; 
+    top:-40px;
+     right: 0;
+     
+}
+        /* Responsive sidebar behavior */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 250px;
+                left: -250px;
+            }
+
+            .sidebar.show {
+                left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                font-size: 24px;
+                display: block;
+                z-index: 1100;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .test {
+            position: relative;
+        }
+
+        span {
+            opacity: 0;
+        }
+
+        .test:hover span {
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="logo text-center">
+            <img src="./8. Type Logo.png" alt="Colgate Logo" class="w-100">
+        </div>
+        <div class="ps-5 ">
+            <img src="./Ellipse 1.png" alt="Colgate Logo">
+            <div>
+                <a class="test" href="#">Home <span class="sidecut">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 40H40V0C40 0 40 40 0 40Z" fill="#e4e0e0" />
+                        </svg>
+
+                    </span>
+                    <span style="position: absolute; bottom:-40px; right: 0;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 40L40 -1.74846e-06L-1.74846e-06 0C-1.74846e-06 0 40 -1.74846e-06 40 40Z"
+                            fill="#e4e0e0" />
+                        </svg>
+
+                    </span></a>
+
+                <a class="test" href="#">  Create New
+                <span style="position: absolute; top:-40px; right: 0;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 40H40V0C40 0 40 40 0 40Z" fill="#e4e0e0" />
+                        </svg>
+
+                    </span>
+                    <span style="position: absolute; bottom:-40px; right: 0;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 40L40 -1.74846e-06L-1.74846e-06 0C-1.74846e-06 0 40 -1.74846e-06 40 40Z"
+                            fill="#e4e0e0" />
+                        </svg>
+
+                    </span></a>
+                <a href="#">Campaigns</a>
+                <a href="#">Automation</a>
+                <a href="#">Analytics</a>
+                <a href="#">Community</a>
+                <a href="#">Creator</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Header -->
+        <div class="header d-flex justify-content-between align-items-center">
+            <h5>Dashboard</h5>
+            <div class="d-flex">
+                <input type="text" class="form-control me-2" placeholder="Search something...">
+                <button class="btn btn-outline-secondary">Sign Up</button>
+                <button class="btn btn-outline-secondary ms-2">Login</button>
+            </div>
+        </div>
+
+        <!-- Content area -->
+        <!-- Main Content -->
+        <div class="col-md-8 p-4">
+
+
+            <!-- Progress Steps -->
+            <div class="step-indicator d-flex justify-content-between">
+                <div>O1</div>
+                <div>O2</div>
+                <div>O3</div>
+                <div class="progress w-100 mx-3">
+                    <div class="progress-bar" style="width: 50%"></div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section mt-4">
+                <h5>Tell us about your goals</h5>
+                <form style="background-color: white; " class="p-4 rounded shadow-1">
+                    <div class="mb-3">
+                        <label for="campaignGoal" class="form-label">What is your campaign goal?</label>
+                        <select class="form-select" id="campaignGoal">
+                            <option>Drive Engagement</option>
+                            <option>Increase Sales</option>
+                            <option>Brand Awareness</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="promoting" class="form-label">What are you promoting?</label>
+                        <select class="form-select" id="promoting">
+                            <option>Launching a new product</option>
+                            <option>Seasonal Campaign</option>
+                            <option>Event Promotion</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="socialMedia" class="form-label">Select your social media channels</label>
+                        <select class="form-select" id="socialMedia">
+                            <option>Instagram</option>
+                            <option>Facebook</option>
+                            <option>Twitter</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary ">Next</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="col-md-2 p-4">
+            <div class="right-sidebar">
+                <h5>Main Goal</h5>
+                <ul>
+                    <li>Campaign Name</li>
+                    <li>Creator for you</li>
+                    <li>Transaction Details</li>
+                    <li>Timelines</li>
+                    <li>Set Alerts for Creators</li>
+                </ul>
+                <button class="btn btn-outline-primary">Preview Your Campaign</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Toggle sidebar on smaller screens
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
