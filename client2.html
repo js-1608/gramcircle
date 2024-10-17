@@ -66,6 +66,60 @@
     .alert-list li {
       margin-bottom: 10px;
     }
+
+    
+.image-section {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 123, 255, 0.5);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: left;
+}
+
+.image-section:hover .overlay {
+  opacity: 1;
+}
+
+
+.price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.status-tag {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: #17a2b8;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
@@ -73,11 +127,19 @@
   <div class="container my-5 col-md-4">
     <div class="promo-card">
       <!-- Header Image Section -->
-      <div class="promo-header">
+      <!-- <div class="promo-header">
         <img src="./image.png" alt="Promotion Image">
         <div class="promo-price">$200 - $800</div>
+      </div> -->
+      <div class="image-section">
+        <img src="./image.png" class="card-img-top" alt="Cosmetics Product Image">
+        <div class="overlay">
+          <h5 class="card-title">Global Footsteps - Beauty From Around The World - New Product Launch</h5>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+        </div>
+        <div class="price-tag">$200 - $800</div>
+        <div class="status-tag">Active</div>
       </div>
-
       <!-- Content Section -->
       <div class="promo-content">
         <div class="d-flex align-items-center mb-4">
