@@ -119,12 +119,185 @@ h6 {
   scrollbar-color: #007bff #f1f1f1; /* Handle and track color for Firefox */
 }
 
+.dashboard-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ddd; /* Light border */
+  margin-bottom: 15px; /* Space between rows */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.table-cell {
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Remove the right border from the last cell in each row */
+.table-row .table-cell:last-child {
+  border-right: none;
+}
+.table>:not(caption)>*>* {
+    padding: .5rem .5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom:none;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.campaign-container {
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        .header .menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu button, .menu .edit-icon {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .stat-box h2 {
+            font-size: 40px;
+        }
+
+        .stat-box p {
+            font-size: 20px;
+        }
+
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        .date-export-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .calendar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .calendar-icon {
+            margin-right: 8px;
+        }
+
+        .export-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Responsiveness */
+        @media(max-width: 768px) {
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-box {
+                margin: 10px 0;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .date-export-container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
     		<!--**********************************
             Content body start
         ***********************************-->
+
+		<div class="campaign-container">
+			<div class="header">
+				<h1>Campaign Name 1 In Two Lines</h1>
+				<div class="menu">
+					<button>Details</button>
+					<button>Influencer List</button>
+					<button class="edit-icon">✏️</button>
+				</div>
+			</div>
+	
+			<div class="stats">
+				<div class="stat-box">
+					<h2>80k</h2>
+					<p>Reach <span class="positive">↑ 42.6%</span></p>
+				</div>
+				<div class="stat-box">
+					<h2>40k</h2>
+					<p>Engagement Rate <span class="negative">↓ 10%</span></p>
+				</div>
+				<div class="date-export-container">
+					<div class="calendar">
+						<span class="calendar-icon">📅</span>
+						<span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
+					</div>
+					<button class="export-btn">Export Data 📄</button>
+				</div>
+			</div>
+	
+
+		</div>
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
@@ -180,8 +353,8 @@ h6 {
 						<div class="table-responsive">
 							<table class="table display mb-4 dataTablesCard table-responsive-xl card-table" id="example5">
 								<thead>
-									<tr>
-										<th>
+									<tr class="table-row">
+										<th >
 											<div class="checkbox me-0 align-self-center">
 												<div class="form-check custom-checkbox ">
 													<input type="checkbox" class="form-check-input" id="checkAll" required="">
@@ -189,16 +362,18 @@ h6 {
 												</div>
 											</div>
 										</th>
-                                        <th>Company</th>
-										<th>Date Applied</th>
-										<th>Reach</th>
-										<th>Like & Reactions</th>
-										<th>Comments</th>
-										<th class="text-center">Shares</th>
+                                        <th class="table-cell">Company</th>
+										<th class="text-center table-cell">Date Published</th>
+										<th class="text-center table-cell">Reach</th>
+										<th class="text-center table-cell">Like & Reactions</th>
+										<th class="text-center table-cell">Comments</th>
+										<th class="text-center table-cell">Shares</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
+
+									<tr class="table-row"	>
+
 										<td>
 											<div class="checkbox me-0 align-self-center">
 												<div class="form-check custom-checkbox ">
@@ -208,7 +383,7 @@ h6 {
 											</div>
 										</td>
 										
-										<td>
+										<td class="table-cell">
 											<div class="media" style="display: flex;">
 												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
@@ -222,208 +397,32 @@ h6 {
 												</div>
 											</div>
 										</td>
-                                        <td>June 1, 2020, 08:22 AM</td>
+                                        <td class="table-cell">June 1, 2020, 08:22 AM</td>
 
-										<td>FULLTIME</td>
-										<td>Senior UX Designer</td>
-                                        <td>Senior UX Designer</td>
+										<td class="text-center table-cell">3</td>
+										<td class="text-center table-cell">4</td>
+                                        <td class="text-center table-cell">5</td>
+										<td class="text-center table-cell">8</td>
+
+									</tr>
+
+									<tr class="table-row"	>
 
 										<td>
-											<div class="d-flex">
-												<a class="contact-icon me-3" href="#"><i class="fa fa-phone" aria-hidden="true"></i>2</a>
-												<a class="contact-icon" href="#"><i class="las la-envelope"></i>5</a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn btn-outline-success rounded  me-3 ms-auto" href="#">Candidate</a>
-												<div class="dropdown float-end custom-dropdown mb-0 c-pointer">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
 											<div class="checkbox me-0 align-self-center">
 												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check2" required="">
-													<label class="form-check-label" for="check2"></label>
+													<input type="checkbox" class="form-check-input" id="check1" required="">
+													<label class="form-check-label" for="check1"></label>
 												</div>
 											</div>
 										</td>
-										<td>#APL-0002</td>
-										<td>June 1, 2020, 08:22 AM</td>
-										<td>
-											<div class="media">
+										
+										<td class="table-cell">
+											<div class="media" style="display: flex;">
 												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#4B58CF"/>
-													<path d="M12.889 12.8887C14.4642 11.3134 16.3344 10.0639 18.3926 9.21132C20.4508 8.35878 22.6567 7.91999 24.8845 7.91999C27.1123 7.91999 29.3183 8.35878 31.3765 9.21132C33.4347 10.0639 35.3048 11.3134 36.8801 12.8887C38.4554 14.464 39.7049 16.3341 40.5575 18.3923C41.41 20.4505 41.8488 22.6565 41.8488 24.8843C41.8488 27.1121 41.41 29.318 40.5575 31.3762C39.7049 33.4344 38.4554 35.3046 36.8801 36.8798L30.8823 30.8821C31.6699 30.0944 32.2947 29.1594 32.721 28.1303C33.1473 27.1011 33.3667 25.9982 33.3667 24.8843C33.3667 23.7704 33.1473 22.6674 32.721 21.6383C32.2947 20.6092 31.6699 19.6741 30.8823 18.8865C30.0947 18.0989 29.1596 17.4741 28.1305 17.0478C27.1014 16.6215 25.9984 16.4021 24.8845 16.4021C23.7706 16.4021 22.6676 16.6215 21.6385 17.0478C20.6094 17.4741 19.6744 18.0989 18.8867 18.8865L12.889 12.8887Z" fill="#8FD7FF"/>
-													<path d="M12.889 36.8798C9.70754 33.6984 7.92024 29.3835 7.92024 24.8843C7.92023 20.385 9.70754 16.0701 12.889 12.8887C16.0704 9.70727 20.3853 7.91997 24.8845 7.91996C29.3837 7.91996 33.6987 9.70726 36.8801 12.8887L30.8823 18.8865C29.2916 17.2958 27.1341 16.4021 24.8845 16.4021C22.6349 16.4021 20.4774 17.2958 18.8867 18.8865C17.296 20.4772 16.4024 22.6346 16.4024 24.8843C16.4024 27.1339 17.296 29.2913 18.8867 30.882L12.889 36.8798Z" fill="white"/>
-												</svg>
-												<div class="media-body text-nowrap">
-													<h6 class="text-black font-w600 fs-16 mb-0">Funk Inc.</h6>
-													<span class="fs-14">IT Department</span>
-												</div>
-											</div>
-										</td>
-										<td>PART TIME</td>
-										<td>Junior UI Designer</td>
-										<td>
-											<div class="d-flex">
-												<a class="contact-icon" href="#"><i class="las la-envelope"></i></a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn rounded btn-outline-warning me-3 ms-auto" href="#">On-Hold</a>
-												<div class="dropdown float-end custom-dropdown mb-0 c-pointer">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check3" required="">
-													<label class="form-check-label" for="check3"></label>
-												</div>
-											</div>
-										</td>
-										<td>#APL-0003</td>
-										<td>June 1, 2020, 08:22 AM</td>
-										<td>
-											<div class="media">
-												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#F0780A"/>
-													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0639 18.3921 9.21132C20.4503 8.35878 22.6563 7.91999 24.884 7.91999C27.1118 7.91999 29.3178 8.35878 31.376 9.21132C33.4342 10.0639 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8843C41.8483 27.1121 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3046 36.8796 36.8798L30.8818 30.8821C31.6695 30.0944 32.2942 29.1594 32.7205 28.1303C33.1468 27.1011 33.3662 25.9982 33.3662 24.8843C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0989 29.1591 17.4741 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.4741 19.6739 18.0989 18.8863 18.8865L12.8885 12.8887Z" fill="white"/>
-													<path d="M12.8885 36.8798C9.70705 33.6984 7.91975 29.3835 7.91975 24.8843C7.91975 20.385 9.70705 16.0701 12.8885 12.8887C16.0699 9.70727 20.3848 7.91997 24.884 7.91996C29.3832 7.91996 33.6982 9.70726 36.8796 12.8887L30.8818 18.8865C29.2911 17.2958 27.1336 16.4021 24.884 16.4021C22.6344 16.4021 20.477 17.2958 18.8863 18.8865C17.2955 20.4772 16.4019 22.6346 16.4019 24.8843C16.4019 27.1339 17.2955 29.2913 18.8863 30.882L12.8885 36.8798Z" fill="white"/>
-												</svg>
-												<div class="media-body text-nowrap">
-													<h6 class="text-black font-w600 fs-16 mb-0">Mosciski Inc.</h6>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-										<td>FREELANCE</td>
-										<td>Intern UI Designer</td>
-										<td>
-											<div class="d-flex">
-												<a class="contact-icon me-3" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-												<a class="contact-icon" href="#"><i class="las la-envelope"></i></a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn rounded btn-outline-dark me-3 ms-auto" href="#">Pending</a>
-												<div class="dropdown float-end custom-dropdown mb-0 c-pointer">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check4" required="">
-													<label class="form-check-label" for="check4"></label>
-												</div>
-											</div>
-										</td>
-										<td>#APL-0004</td>
-										<td>June 1, 2020, 08:22 AM</td>
-										<td>
-											<div class="media">
-												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#BB1D85"/>
-													<path d="M12.8883 36.8797C11.313 35.3045 10.0635 33.4343 9.21092 31.3761C8.35839 29.3179 7.91959 27.112 7.91959 24.8842C7.91959 22.6564 8.35839 20.4504 9.21092 18.3922C10.0635 16.334 11.313 14.4639 12.8883 12.8886C14.4636 11.3133 16.3337 10.0638 18.3919 9.21123C20.4501 8.3587 22.6561 7.9199 24.8839 7.9199C27.1117 7.9199 29.3176 8.3587 31.3758 9.21123C33.434 10.0638 35.3042 11.3133 36.8794 12.8886L30.8817 18.8864C30.094 18.0988 29.159 17.474 28.1299 17.0477C27.1008 16.6214 25.9978 16.402 24.8839 16.402C23.77 16.402 22.667 16.6214 21.6379 17.0477C20.6088 17.474 19.6737 18.0988 18.8861 18.8864C18.0985 19.674 17.4737 20.6091 17.0474 21.6382C16.6211 22.6673 16.4017 23.7703 16.4017 24.8842C16.4017 25.9981 16.6211 27.1011 17.0474 28.1302C17.4737 29.1593 18.0985 30.0943 18.8861 30.882L12.8883 36.8797Z" fill="white"/>
-													<path d="M36.8795 36.8797C33.6981 40.0612 29.3832 41.8485 24.8839 41.8485C20.3847 41.8485 16.0698 40.0612 12.8884 36.8797C9.70697 33.6983 7.91966 29.3834 7.91966 24.8842C7.91966 20.385 9.70696 16.0701 12.8884 12.8886L18.8862 18.8864C17.2955 20.4771 16.4018 22.6346 16.4018 24.8842C16.4018 27.1338 17.2955 29.2913 18.8862 30.882C20.4769 32.4727 22.6343 33.3663 24.8839 33.3663C27.1335 33.3663 29.291 32.4727 30.8817 30.882L36.8795 36.8797Z" fill="white"/>
-												</svg>
-												<div class="media-body text-nowrap">
-													<h6 class="text-black font-w600 fs-16 mb-0">Mosciski Inc.</h6>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-										<td>FREELANCE</td>
-										<td>Intern UI Designer</td>
-										<td>
-											<div class="d-flex">
-												<a class="contact-icon" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn rounded btn-outline-dark me-3 ms-auto" href="#">Pending</a>
-												<div class="dropdown float-end custom-dropdown mb-0 c-pointer">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check6" required="">
-													<label class="form-check-label" for="check6"></label>
-												</div>
-											</div>
-										</td>
-										<td>#APL-0005</td>
-										<td>June 1, 2020, 08:22 AM</td>
-										<td>
-											<div class="media">
-												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#31B52F"/>
-													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0639 18.3921 9.21132C20.4503 8.35878 22.6563 7.91999 24.884 7.91999C27.1118 7.91999 29.3178 8.35878 31.376 9.21132C33.4342 10.0639 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8843C41.8483 27.1121 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3046 36.8796 36.8798L30.8818 30.8821C31.6695 30.0944 32.2942 29.1594 32.7205 28.1303C33.1468 27.1011 33.3662 25.9982 33.3662 24.8843C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0989 29.1591 17.4741 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.4741 19.6739 18.0989 18.8863 18.8865L12.8885 12.8887Z" fill="white"/>
+													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#40C7CF"/>
+													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0638 18.3921 9.21129C20.4503 8.35875 22.6563 7.91996 24.884 7.91996C27.1118 7.91996 29.3178 8.35875 31.376 9.21129C33.4342 10.0638 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8842C41.8483 27.112 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3045 36.8796 36.8798L30.8818 30.882C31.6695 30.0944 32.2942 29.1593 32.7205 28.1302C33.1468 27.1011 33.3662 25.9981 33.3662 24.8842C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0988 29.1591 17.474 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.474 19.6739 18.0988 18.8863 18.8865L12.8885 12.8887Z" fill="#8FD7FF"/>
 													<path d="M12.8885 36.8798C9.70705 33.6984 7.91975 29.3835 7.91975 24.8843C7.91975 20.385 9.70705 16.0701 12.8885 12.8887C16.0699 9.70727 20.3848 7.91997 24.884 7.91996C29.3832 7.91996 33.6982 9.70726 36.8796 12.8887L30.8818 18.8865C29.2911 17.2958 27.1336 16.4021 24.884 16.4021C22.6344 16.4021 20.477 17.2958 18.8863 18.8865C17.2955 20.4772 16.4019 22.6346 16.4019 24.8843C16.4019 27.1339 17.2955 29.2913 18.8863 30.882L12.8885 36.8798Z" fill="white"/>
 												</svg>
 												<div class="media-body text-nowrap">
@@ -432,84 +431,81 @@ h6 {
 												</div>
 											</div>
 										</td>
-										<td>FULLTIME</td>
-										<td>Senior UX Designer</td>
-										<td>
-											<div class="d-flex">
-												<a class="contact-icon me-3" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-												<a class="contact-icon" href="#"><i class="las la-envelope"></i></a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn rounded btn-outline-success me-3 ms-auto" href="#">Candidate</a>
-												<div class="dropdown float-end custom-dropdown c-pointer mb-0">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
+                                        <td class="table-cell">June 1, 2020, 08:22 AM</td>
+
+										<td class="text-center table-cell">3</td>
+										<td class="text-center table-cell">4</td>
+                                        <td class="text-center table-cell">5</td>
+										<td class="text-center table-cell">8</td>
+
 									</tr>
-									<tr>
+									<tr class="table-row"	>
+
 										<td>
 											<div class="checkbox me-0 align-self-center">
 												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check7" required="">
-													<label class="form-check-label" for="check7"></label>
+													<input type="checkbox" class="form-check-input" id="check1" required="">
+													<label class="form-check-label" for="check1"></label>
 												</div>
 											</div>
 										</td>
-										<td>#APL-0006</td>
-										<td>June 1, 2020, 08:22 AM</td>
-										<td>
-											<div class="media">
+										
+										<td class="table-cell">
+											<div class="media" style="display: flex;">
 												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#515151"/>
-													<path d="M12.889 12.8887C14.4642 11.3134 16.3344 10.0638 18.3926 9.21131C20.4508 8.35877 22.6567 7.91998 24.8845 7.91998C27.1123 7.91998 29.3183 8.35878 31.3765 9.21131C33.4347 10.0638 35.3048 11.3134 36.8801 12.8887C38.4554 14.464 39.7049 16.3341 40.5575 18.3923C41.41 20.4505 41.8488 22.6565 41.8488 24.8843C41.8488 27.1121 41.41 29.318 40.5575 31.3762C39.7049 33.4344 38.4554 35.3046 36.8801 36.8798L30.8823 30.882C31.6699 30.0944 32.2947 29.1593 32.721 28.1302C33.1473 27.1011 33.3667 25.9982 33.3667 24.8843C33.3667 23.7704 33.1473 22.6674 32.721 21.6383C32.2947 20.6092 31.6699 19.6741 30.8823 18.8865C30.0947 18.0988 29.1596 17.4741 28.1305 17.0478C27.1014 16.6215 25.9984 16.4021 24.8845 16.4021C23.7706 16.4021 22.6676 16.6215 21.6385 17.0478C20.6094 17.4741 19.6744 18.0988 18.8867 18.8865L12.889 12.8887Z" fill="white"/>
-													<path d="M36.8801 12.8887C40.0615 16.0701 41.8488 20.385 41.8488 24.8842C41.8488 29.3835 40.0615 33.6984 36.8801 36.8798C33.6987 40.0612 29.3837 41.8485 24.8845 41.8485C20.3853 41.8485 16.0704 40.0612 12.889 36.8798L18.8867 30.882C20.4775 32.4727 22.6349 33.3664 24.8845 33.3664C27.1341 33.3664 29.2916 32.4727 30.8823 30.882C32.473 29.2913 33.3667 27.1339 33.3667 24.8842C33.3667 22.6346 32.473 20.4772 30.8823 18.8865L36.8801 12.8887Z" fill="white"/>
+													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#40C7CF"/>
+													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0638 18.3921 9.21129C20.4503 8.35875 22.6563 7.91996 24.884 7.91996C27.1118 7.91996 29.3178 8.35875 31.376 9.21129C33.4342 10.0638 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8842C41.8483 27.112 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3045 36.8796 36.8798L30.8818 30.882C31.6695 30.0944 32.2942 29.1593 32.7205 28.1302C33.1468 27.1011 33.3662 25.9981 33.3662 24.8842C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0988 29.1591 17.474 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.474 19.6739 18.0988 18.8863 18.8865L12.8885 12.8887Z" fill="#8FD7FF"/>
+													<path d="M12.8885 36.8798C9.70705 33.6984 7.91975 29.3835 7.91975 24.8843C7.91975 20.385 9.70705 16.0701 12.8885 12.8887C16.0699 9.70727 20.3848 7.91997 24.884 7.91996C29.3832 7.91996 33.6982 9.70726 36.8796 12.8887L30.8818 18.8865C29.2911 17.2958 27.1336 16.4021 24.884 16.4021C22.6344 16.4021 20.477 17.2958 18.8863 18.8865C17.2955 20.4772 16.4019 22.6346 16.4019 24.8843C16.4019 27.1339 17.2955 29.2913 18.8863 30.882L12.8885 36.8798Z" fill="white"/>
 												</svg>
 												<div class="media-body text-nowrap">
-													<h6 class="text-black font-w600 fs-16 mb-0">Funk Inc.</h6>
-													<span class="fs-14">IT Department</span>
+													<h6 class="text-black font-w600 fs-16 mb-0">Highspeed Studios</h6>
+													<span class="fs-14">Creative Design Agency</span>
 												</div>
 											</div>
 										</td>
-										<td>PART TIME</td>
-										<td>Junior UI Designer</td>
-										<td>
-											<div class="d-flex">
-												<a class="contact-icon" href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex align-items-center">
-												<a class="btn rounded btn-outline-warning me-3 ms-auto" href="#">On-Hold</a>
-												<div class="dropdown float-end custom-dropdown mb-0  c-pointer">
-													<div class="" data-bs-toggle="dropdown">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-																<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-														</svg>
-													</div>
-													<div class="dropdown-menu dropdown-menu-end">
-														<a class="dropdown-item" href="javascript:void(0);">Details</a>
-														<a class="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
-													</div>
-												</div>
-											</div>
-										</td>
+                                        <td class="table-cell">June 1, 2020, 08:22 AM</td>
+
+										<td class="text-center table-cell">3</td>
+										<td class="text-center table-cell">4</td>
+                                        <td class="text-center table-cell">5</td>
+										<td class="text-center table-cell">8</td>
+
 									</tr>
+									<tr class="table-row"	>
+
+										<td>
+											<div class="checkbox me-0 align-self-center">
+												<div class="form-check custom-checkbox ">
+													<input type="checkbox" class="form-check-input" id="check1" required="">
+													<label class="form-check-label" for="check1"></label>
+												</div>
+											</div>
+										</td>
+										
+										<td class="table-cell">
+											<div class="media" style="display: flex;">
+												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
+													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#40C7CF"/>
+													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0638 18.3921 9.21129C20.4503 8.35875 22.6563 7.91996 24.884 7.91996C27.1118 7.91996 29.3178 8.35875 31.376 9.21129C33.4342 10.0638 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8842C41.8483 27.112 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3045 36.8796 36.8798L30.8818 30.882C31.6695 30.0944 32.2942 29.1593 32.7205 28.1302C33.1468 27.1011 33.3662 25.9981 33.3662 24.8842C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0988 29.1591 17.474 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.474 19.6739 18.0988 18.8863 18.8865L12.8885 12.8887Z" fill="#8FD7FF"/>
+													<path d="M12.8885 36.8798C9.70705 33.6984 7.91975 29.3835 7.91975 24.8843C7.91975 20.385 9.70705 16.0701 12.8885 12.8887C16.0699 9.70727 20.3848 7.91997 24.884 7.91996C29.3832 7.91996 33.6982 9.70726 36.8796 12.8887L30.8818 18.8865C29.2911 17.2958 27.1336 16.4021 24.884 16.4021C22.6344 16.4021 20.477 17.2958 18.8863 18.8865C17.2955 20.4772 16.4019 22.6346 16.4019 24.8843C16.4019 27.1339 17.2955 29.2913 18.8863 30.882L12.8885 36.8798Z" fill="white"/>
+												</svg>
+												<div class="media-body text-nowrap">
+													<h6 class="text-black font-w600 fs-16 mb-0">Highspeed Studios</h6>
+													<span class="fs-14">Creative Design Agency</span>
+												</div>
+											</div>
+										</td>
+                                        <td class="table-cell">June 1, 2020, 08:22 AM</td>
+
+										<td class="text-center table-cell">3</td>
+										<td class="text-center table-cell">4</td>
+                                        <td class="text-center table-cell">5</td>
+										<td class="text-center table-cell">8</td>
+
+									</tr>
+								
 								</tbody>
 							</table>
 						</div>
@@ -521,6 +517,7 @@ h6 {
             Content body end
         ***********************************-->
 
-      
+
+		  
 </body>
 </html>

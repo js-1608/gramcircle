@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .campaign-container {
+            max-width: 900px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        .header .menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu button, .menu .edit-icon {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            margin: 0 10px;
+            background-color: #f9f9f9;
+        }
+
+        .stat-box h2 {
+            font-size: 40px;
+        }
+
+        .stat-box p {
+            font-size: 20px;
+        }
+
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        .date-export-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .calendar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .calendar-icon {
+            margin-right: 8px;
+        }
+
+        .export-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Responsiveness */
+        @media(max-width: 768px) {
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-box {
+                margin: 10px 0;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .date-export-container {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="campaign-container">
+        <div class="header">
+            <h1>Campaign Name 1 In Two Lines</h1>
+            <div class="menu">
+                <button>Details</button>
+                <button>Influencer List</button>
+                <button class="edit-icon">✏️</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h2>80k</h2>
+                <p>Reach <span class="positive">↑ 42.6%</span></p>
+            </div>
+            <div class="stat-box">
+                <h2>40k</h2>
+                <p>Engagement Rate <span class="negative">↓ 10%</span></p>
+            </div>
+        </div>
+
+        <div class="date-export-container">
+            <div class="calendar">
+                <span class="calendar-icon">📅</span>
+                <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
+            </div>
+            <button class="export-btn">Export Data 📄</button>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder for handling export button or date picker functionality
+        document.querySelector('.export-btn').addEventListener('click', function() {
+            alert('Exporting data...');
+            // Logic for exporting data
+        });
+
+        document.querySelector('.calendar').addEventListener('click', function() {
+            alert('Open date range picker...');
+            // Logic for opening a date range picker
+        });
+    </script>
+</body>
+</html>
