@@ -1,475 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
 
-    <style>
-        .custom-card {
-  overflow: hidden;
-  height: 80vh;
-}
+  <style>
+    .custom-card {
+      overflow: hidden;
+      height: 80vh;
+    }
 
-.image-section {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-}
+    .image-section {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
 
-.image-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 123, 255, 0.5);
-  color: #fff;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: left;
-}
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 123, 255, 0.5);
+      color: #fff;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: left;
+    }
 
-.image-section:hover .overlay {
-  opacity: 1;
-}
+    .image-section:hover .overlay {
+      opacity: 1;
+    }
 
-.card-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
 
-.location {
-  font-size: 0.9rem;
-}
+    .location {
+      font-size: 0.9rem;
+    }
 
-.price-tag {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #28a745;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
+    .price-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-.status-tag {
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  background-color: #17a2b8;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
+    .status-tag {
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      background-color: #17a2b8;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
 
-.custom-scroll {
-  max-height: 70vh;
-  overflow-y: auto;
-  padding: 20px;
-}
+    .custom-scroll {
+      max-height: 70vh;
+      overflow-y: auto;
+      padding: 20px;
+    }
 
-.brand-details,
-.compensation-details,
-.timeline-details,
-.deliverable-task {
-  margin-bottom: 20px;
-}
+    .brand-details,
+    .compensation-details,
+    .timeline-details,
+    .deliverable-task {
+      margin-bottom: 20px;
+    }
 
-h6 {
-  font-size: 1rem;
-  font-weight: bold;
-}
-/* Slim Scrollbar */
-.custom-scroll::-webkit-scrollbar {
-  width: 8px; /* Slim width */
-}
+    h6 {
+      font-size: 1rem;
+      font-weight: bold;
+    }
 
-.custom-scroll::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Light background for the scrollbar track */
-}
+    /* Slim Scrollbar */
+    .custom-scroll::-webkit-scrollbar {
+      width: 8px;
+      /* Slim width */
+    }
 
-.custom-scroll::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Blue color for scrollbar handle */
-  border-radius: 10px; /* Rounded corners for scrollbar */
-  border: 2px solid #f1f1f1; /* Adding space around the scrollbar handle */
-}
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      /* Light background for the scrollbar track */
+    }
 
-.custom-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: #0056b3; /* Darker blue on hover for visual feedback */
-}
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #007bff;
+      /* Blue color for scrollbar handle */
+      border-radius: 10px;
+      /* Rounded corners for scrollbar */
+      border: 2px solid #f1f1f1;
+      /* Adding space around the scrollbar handle */
+    }
 
-/* For Firefox */
-.custom-scroll {
-  scrollbar-width: thin; /* Slim scrollbar for Firefox */
-  scrollbar-color: #007bff #f1f1f1; /* Handle and track color for Firefox */
-}
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #0056b3;
+      /* Darker blue on hover for visual feedback */
+    }
 
-.dashboard-table {
-  display: flex;
-  flex-direction: column;
-}
+    /* For Firefox */
+    .custom-scroll {
+      scrollbar-width: thin;
+      /* Slim scrollbar for Firefox */
+      scrollbar-color: #007bff #f1f1f1;
+      /* Handle and track color for Firefox */
+    }
 
-.table-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: white;
-  border-radius: 8px; /* Rounded corners */
-  border: 1px solid #ddd; /* Light border */
-  margin-bottom: 15px; /* Space between rows */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  font-size: 14px;
-}
-.table-row2 {
-	display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: white;
-  border-bottom: 1px solid #ddd; /* Light border */
-  margin-bottom: 15px; /* Space between rows */
-  font-size: 14px;
+    .dashboard-table {
+      display: flex;
+      flex-direction: column;
+    }
 
-}
-.table-cell {
+    .table {
+      overflow-x: scroll;
+    }
+
+    .table-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: white;
+      border-radius: 8px;
+      /* Rounded corners */
+      border: 1px solid #ddd;
+      /* Light border */
+      margin-bottom: 15px;
+      /* Space between rows */
+      /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+      /* Optional shadow for depth */
+      font-size: 14px;
+      /* border-top:none; */
+    }
+
+    .table-row2 {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: white;
+      /* border-bottom: 1px solid #ddd; */
+      /* Light border */
+      margin-bottom: 15px;
+      /* Space between rows */
+      font-size: 14px;
+
+    }
+
+    .table td,
+    .table th {
+      padding: .75rem;
+      vertical-align: middle;
+      border-top: none;
+    }
+
+    .table-cell {
   padding: 10px;
   flex: 1;
   text-align: center;
+  font-weight: 500;
+  min-width: 120px; /* Added to prevent excessive shrinking */
 }
 
-/* Remove the right border from the last cell in each row */
-.table-row .table-cell:last-child {
-  border-right: none;
+
+    /* Remove the right border from the last cell in each row */
+    .table-row .table-cell:last-child {
+      border-right: none;
+    }
+
+    .table>:not(caption)>*>* {
+      padding: .5rem .5rem;
+      background-color: var(--bs-table-bg);
+      border-bottom: none;
+      box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+    }
+
+    .campaign-container {
+      margin: auto;
+
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .header .menu {
+      display: flex;
+      gap: 10px;
+    }
+
+    .menu button,
+    .menu .edit-icon {
+      background-color: #f0f0f0;
+      border: none;
+      padding: 5px;
+      border-radius: 4px;
+    }
+.menu >button{
+  background-color: #fff;
+  color: #c5c5c5;
 }
-.table>:not(caption)>*>* {
-    padding: .5rem .5rem;
-    background-color: var(--bs-table-bg);
-    border-bottom:none;
-    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+.menu >button :hover{
+  background-color: #fff;
+  color: #000000;
 }
-.campaign-container {
-            margin: auto;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
-        }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .stat-box {
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1;
+      margin: 0 10px;
+      display: flex;
 
-        .header h1 {
-            font-size: 24px;
-        }
+    }
 
-        .header .menu {
-            display: flex;
-            gap: 10px;
-        }
+    .stat-box2 {
+      padding: 10px;
+      margin: 0 10px;
+      width: 40%
+    }
 
-        .menu button, .menu .edit-icon {
-            background-color: #f0f0f0;
-            border: none;
-            padding: 5px;
-            border-radius: 4px;
-        }
+    .stat-box h2 {
+      font-size: 48px;
+      white-space: nowrap;
+    }
 
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
+    .stat-box p {
+      font-size: 20px;
+    }
 
-        .stat-box {
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1;
-            margin: 0 10px;
-			display: flex;
-			
-        }
-		.stat-box2 {
-            padding: 10px;
-            margin: 0 10px;
-			width:40%
+    .text_small {
+      font-size: 16px;
+    }
 
-        }
+    .positive {
+      color: green;
+    }
 
-        .stat-box h2 {
-            font-size: 40px;
-			white-space: nowrap;
-        }
+    .negative {
+      color: red;
+    }
 
-        .stat-box p {
-            font-size: 20px;
-        }
-		.text_small{
-			font-size: 16px;
-		}
-        .positive {
-            color: green;
-        }
+    .date-export-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 20px;
+    }
 
-        .negative {
-            color: red;
-        }
+    .calendar {
+      display: flex;
+      align-items: center;
+      border: 1px solid black;
+      padding: 10px;
+      cursor: pointer;
+    }
 
-        .date-export-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-top: 20px;
-        }
+    .calendar-icon {
+      margin-right: 8px;
+    }
 
-        .calendar {
-            display: flex;
-            align-items: center;
-            border: 1px solid black;
-            padding: 10px;
-            cursor: pointer;
-        }
+    .export-btn {
+      background-color: #f0f0f0;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: 1px solid black;
+    }
 
-        .calendar-icon {
-            margin-right: 8px;
-        }
+    .table-row-width {
+      width: 25px
+    }
 
-        .export-btn {
-            background-color: #f0f0f0;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-			border: 1px solid black;
-        }
+    /* Responsiveness */
+    @media(max-width: 768px) {
+      .stats {
+        flex-direction: column;
+      }
 
-        /* Responsiveness */
-        @media(max-width: 768px) {
-            .stats {
-                flex-direction: column;
-            }
+      .stat-box {
+        margin: 10px 0;
+      }
 
-            .stat-box {
-                margin: 10px 0;
-            }
+      .header h1 {
+        font-size: 20px;
+      }
 
-            .header h1 {
-                font-size: 20px;
-            }
-
-            .date-export-container {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    
+    }
+  </style>
 </head>
+
 <body>
-    		<!--**********************************
+  <!--**********************************
             Content body start
         ***********************************-->
 
-		<div class="campaign-container">
-			<div class="header">
-				<h1>Campaign Name 1 In Two Lines</h1>
-				<div class="menu">
-					<button>Details</button>
-					<button>Influencer List</button>
-					<button class="edit-icon">✏️</button>
-				</div>
-			</div>
-	
-			<div class="stats">
-				<div class="stat-box">
-					<div class="stat-box2" style="border-right: 1px solid black; ">
-						<p>Reach </p>
-						<h2>80k<span class="positive text_small">↑ 42.6%</span></h2>
-					</div>
-					<div class="stat-box2">
-						<p style="white-space: nowrap;">Engagement Rate </p>
-						<h2>40k <span class="negative text_small">↓ 10%</span></h2>
-					</div>
-				</div>
-				<div class="date-export-container">
-					<div class="calendar">
-						<span class="calendar-icon">📅</span>
-						<span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
-					</div>
-					<button class="export-btn">Export Data 📄</button>
-				</div>
-			</div>
-	
+  <div class="campaign-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Created New</a></li>
+      <li class="breadcrumb-item active" aria-current="page">United Campaign</li>
+  </ol>
+    <div class="header mx-4">
+      <h1 >Campaign Name 1 In Two Lines</h1>
+      <div class="menu">
+        <button class="btn">Details</button>
+        <button class="btn">Influencer List</button>
+        <button class="btn">Analytics</button>
+        <button class="btn ">✏️</button>
+      </div>
+    </div>
 
-		</div>
-        <div class="content-body">
-            <!-- row -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-xl-12">
-						<div class="table-responsive">
-							<table class="table display mb-4 dataTablesCard table-responsive-xl card-table" id="example5">
-								<thead>
-									<tr class="table-row2">
-										<th >
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="checkAll" required="">
-													<label class="form-check-label" for="checkAll"></label>
-												</div>
-											</div>
-										</th>
-                                        <th  class="text-center table-cell">Company</th>
-										<th class="text-center table-cell">Date Published</th>
-										<th class="text-center table-cell">Reach</th>
-										<th class="text-center table-cell">Like & Reactions</th>
-										<th class="text-center table-cell">Comments</th>
-										<th class="text-center table-cell">Shares</th>
-									</tr>
-								</thead>
-								<tbody>
-
-									<tr class="table-row"	>
-
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check1" required="">
-													<label class="form-check-label" for="check1"></label>
-												</div>
-											</div>
-										</td>
-										
-										<td  class="text-center table-cell">
-											<div class="media" style="display: flex;">
-												<svg class="me-3" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#D3D3D3"/>
-													<path d="M0 7.27273C0 3.25611 3.25611 0 7.27273 0H42.7273C46.7439 0 50 3.25611 50 7.27273V42.7273C50 46.7439 46.7439 50 42.7273 50H7.27273C3.25611 50 0 46.7439 0 42.7273V7.27273Z" fill="#40C7CF"/>
-													<path d="M12.8885 12.8887C14.4638 11.3134 16.3339 10.0638 18.3921 9.21129C20.4503 8.35875 22.6563 7.91996 24.884 7.91996C27.1118 7.91996 29.3178 8.35875 31.376 9.21129C33.4342 10.0638 35.3043 11.3134 36.8796 12.8887C38.4549 14.464 39.7045 16.3341 40.557 18.3923C41.4095 20.4505 41.8483 22.6565 41.8483 24.8842C41.8483 27.112 41.4095 29.318 40.557 31.3762C39.7045 33.4344 38.4549 35.3045 36.8796 36.8798L30.8818 30.882C31.6695 30.0944 32.2942 29.1593 32.7205 28.1302C33.1468 27.1011 33.3662 25.9981 33.3662 24.8842C33.3662 23.7704 33.1468 22.6674 32.7205 21.6383C32.2942 20.6092 31.6695 19.6741 30.8818 18.8865C30.0942 18.0988 29.1591 17.474 28.13 17.0478C27.1009 16.6215 25.9979 16.4021 24.884 16.4021C23.7701 16.4021 22.6672 16.6215 21.6381 17.0478C20.609 17.474 19.6739 18.0988 18.8863 18.8865L12.8885 12.8887Z" fill="#8FD7FF"/>
-													<path d="M12.8885 36.8798C9.70705 33.6984 7.91975 29.3835 7.91975 24.8843C7.91975 20.385 9.70705 16.0701 12.8885 12.8887C16.0699 9.70727 20.3848 7.91997 24.884 7.91996C29.3832 7.91996 33.6982 9.70726 36.8796 12.8887L30.8818 18.8865C29.2911 17.2958 27.1336 16.4021 24.884 16.4021C22.6344 16.4021 20.477 17.2958 18.8863 18.8865C17.2955 20.4772 16.4019 22.6346 16.4019 24.8843C16.4019 27.1339 17.2955 29.2913 18.8863 30.882L12.8885 36.8798Z" fill="white"/>
-												</svg>
-												<div class="media-body text-nowrap">
-													<p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-                                        <td  class="text-center table-cell">June 1, 2020, 08:22 AM</td>
-
-										<td class="text-center table-cell">3</td>
-										<td class="text-center table-cell">4</td>
-                                        <td class="text-center table-cell">5</td>
-										<td class="text-center table-cell">8</td>
-
-									</tr>
-
-									<tr class="table-row"	>
-
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check1" required="">
-													<label class="form-check-label" for="check1"></label>
-												</div>
-											</div>
-										</td>
-										
-										<td  class="text-center table-cell">
-											
-												<div class="media-body text-nowrap">
-													<p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-                                        <td  class="text-center table-cell">June 1, 2020, 08:22 AM</td>
-
-										<td class="text-center table-cell">3</td>
-										<td class="text-center table-cell">4</td>
-                                        <td class="text-center table-cell">5</td>
-										<td class="text-center table-cell">8</td>
-
-									</tr>	<tr class="table-row"	>
-
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check1" required="">
-													<label class="form-check-label" for="check1"></label>
-												</div>
-											</div>
-										</td>
-										
-										<td  class="text-center table-cell">
-											<div class="media" style="display: flex;">
-												
-												<div class="media-body text-nowrap">
-													<p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-                                        <td  class="text-center table-cell">June 1, 2020, 08:22 AM</td>
-
-										<td class="text-center table-cell">3</td>
-										<td class="text-center table-cell">4</td>
-                                        <td class="text-center table-cell">5</td>
-										<td class="text-center table-cell">8</td>
-
-									</tr>	<tr class="table-row"	>
-
-										<td>
-											<div class="checkbox me-0 align-self-center">
-												<div class="form-check custom-checkbox ">
-													<input type="checkbox" class="form-check-input" id="check1" required="">
-													<label class="form-check-label" for="check1"></label>
-												</div>
-											</div>
-										</td>
-										
-										<td  class="text-center table-cell">
-											<div class="media" style="display: flex;">
-												
-												<div class="media-body text-nowrap">
-													<p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
-													<span class="fs-14">Creative Design Agency</span>
-												</div>
-											</div>
-										</td>
-                                        <td  class="text-center table-cell">June 1, 2020, 08:22 AM</td>
-
-										<td class="text-center table-cell">3</td>
-										<td class="text-center table-cell">4</td>
-                                        <td class="text-center table-cell">5</td>
-										<td class="text-center table-cell">8</td>
-
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+    <div class="stats">
+      <div class="stat-box col-md-6">
+        <div class="stat-box2" style="border-right: 1px solid black; ">
+          <p class="mb-0">Reach </p>
+          <h2>80k<span class="positive text_small ml-1">↑ 42.6%</span></h2>
         </div>
-        <!--**********************************
+        <div class="stat-box2">
+          <p class="mb-0" style="white-space: nowrap;">Engagement Rate </p>
+          <h2>40k <span class="negative text_small ">↓ 10%</span></h2>
+        </div>
+      </div>
+      <div class="date-export-container col-md-6">
+        <div class="calendar col-md-8">
+          <span class="calendar-icon">📅</span>
+          
+          <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
+        </div>
+        <button class="export-btn">Export Data 📄</button>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="table-responsive">
+            <table class="table display mb-4 dataTablesCard table-responsive-xl card-table" id="example5">
+              <thead>
+                <tr class="table-row2 mb-4">
+                  <th>
+                    <div class="checkbox me-0 align-self-center">
+                      <div class="form-check custom-checkbox ">
+                        <input type="checkbox" class="form-check-input" id="checkAll" required="">
+                        <label class="form-check-label" for="checkAll"></label>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="text-center table-cell " style="min-width: 200px;">Company</th>
+                  <th class="text-center table-cell table-row-width">Date Published</th>
+                  <th class="text-center table-cell table-row-width">Reach</th>
+                  <th class="text-center table-cell table-row-width">Like & Reactions</th>
+                  <th class="text-center table-cell table-row-width">Comments</th>
+                  <th class="text-center table-cell table-row-width">Shares</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr class="table-row">
+
+                  <td>
+                    <div class="checkbox me-0 align-self-center">
+                      <div class="form-check custom-checkbox ">
+                        <input type="checkbox" class="form-check-input" id="check1" required="">
+                        <label class="form-check-label" for="check1"></label>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="text-center table-cell" style="min-width: 200px;">
+                    <div class="media" style="display: flex;">
+                      <img src="./images/image (1).png" width="50" height="50">
+                      <div class="media-body text-nowrap">
+                        <p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
+                        <span class="fs-14">Creative Design Agency</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center table-cell">June 1, 2020, 08:22 AM</td>
+
+                  <td class="text-center table-cell">3</td>
+                  <td class="text-center table-cell">4</td>
+                  <td class="text-center table-cell">5</td>
+                  <td class="text-center table-cell">8</td>
+
+                </tr>
+                <tr class="table-row">
+
+                  <td>
+                    <div class="checkbox me-0 align-self-center">
+                      <div class="form-check custom-checkbox ">
+                        <input type="checkbox" class="form-check-input" id="check1" required="">
+                        <label class="form-check-label" for="check1"></label>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="text-center table-cell" style="min-width: 200px;">
+                    <div class="media" style="display: flex;">
+                      <img src="./images/image (1).png" width="50" height="50">
+                      <div class="media-body text-nowrap">
+                        <p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
+                        <span class="fs-14">Creative Design Agency</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center table-cell">June 1, 2020, 08:22 AM</td>
+
+                  <td class="text-center table-cell">3</td>
+                  <td class="text-center table-cell">4</td>
+                  <td class="text-center table-cell">5</td>
+                  <td class="text-center table-cell">8</td>
+
+                </tr>  
+                <tr class="table-row">
+
+                  <td>
+                    <div class="checkbox me-0 align-self-center">
+                      <div class="form-check custom-checkbox ">
+                        <input type="checkbox" class="form-check-input" id="check1" required="">
+                        <label class="form-check-label" for="check1"></label>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="text-center table-cell" style="min-width: 200px;">
+                    <div class="media" style="display: flex;">
+                      <img src="./images/image (1).png" width="50" height="50">
+                      <div class="media-body text-nowrap">
+                        <p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
+                        <span class="fs-14">Creative Design Agency</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center table-cell">June 1, 2020, 08:22 AM</td>
+
+                  <td class="text-center table-cell">3</td>
+                  <td class="text-center table-cell">4</td>
+                  <td class="text-center table-cell">5</td>
+                  <td class="text-center table-cell">8</td>
+
+                </tr> 
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--**********************************
             Content body end
         ***********************************-->
 
 
-		  
+
 </body>
+
 </html>
