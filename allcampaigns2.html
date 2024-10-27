@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+
+    <style>
+          .breadcrumb {
+            background-color: transparent;
+            font-size: 14px;
+        }
+        .icon-btn {
+            background-color: #ffde00; /* Yellow background for icons */
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .action-buttons button {
+            margin-left: 10px;
+        }
+        .create-new-btn {
+            background-color: #ffde00;
+            border-color: #ffde00;
+            color: black;
+        }
+        /* Custom Styles for the Campaign Table */
+        table.campaign-table {
+            width: 100%;
+            /* background-color: #f9f9f9; */
+            border-spacing: 0 10px;
+        }
+
+        table.campaign-table th,
+        table.campaign-table td {
+            padding: 15px;
+            vertical-align: middle;
+
+        }
+
+        table.campaign-table tbody tr {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #cacaca;
+            transition: all 0.3s ease;
+        }
+
+        table.campaign-table tbody tr:hover {
+            border: 1px solid #ffde00;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table.campaign-table td img {
+
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .campaign-details span {
+            font-weight: 600;
+            display: block;
+        }
+
+        .campaign-details small {
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .image-thumbnail-box {
+            text-align: center;
+            margin: auto 10px;
+
+        }
+
+        .image-thumbnail-box-img {
+            width: 210px;
+            height: 200px;
+
+        }
+
+        .separator {
+            border: none;
+            border-left:1px solid #acacac;
+            border-right:1px solid #acacac;
+
+            margin: 8px !important;
+        }
+
+        .campaign-badge {
+            font-size: 0.9rem;
+            padding: 10px;
+            font-weight: 400;
+            border-radius: 50px;
+            background-color: #0038AB;
+            width:120px
+        }
+
+        .actions-btns button {
+            margin-right: 10px;
+        }
+
+        .filter-btn.active {
+            color: #000000;
+
+        }
+
+        .filter-btn {
+            color: #ACACAC;
+
+        }
+
+        .btn {
+            border: none;
+        }
+        .view-btn{
+            border:1px solid #acacac;
+        }
+        .text-muted >a{
+            color: #ACACAC !important;
+        }
+        .active{
+            color: black;
+        }
+        .date-export-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .calendar {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .calendar-icon {
+            margin-right: 8px;
+        }
+
+        .export-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+     
+
+        #left-arrow, #right-arrow {
+    font-size: 44px; /* Increase arrow size */
+    
+    justify-content: center;
+
+    transition: background-color 0.3s;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item text-muted"><a href="#">Menu</a></li>
+                <li class="breadcrumb-item text-muted"><a href="#">Campaigns</a></li>
+                <li class="breadcrumb-item active" aria-current="page">All Campaigns</li>
+            </ol>
+        </nav>
+    
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Left side: Title and icons -->
+            <div>
+                <h1>All Campaigns</h1>
+                <div class="date-export-container">
+                    <div class="calendar">
+                        <span class="calendar-icon">📅</span>
+                        <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
+                    </div>
+                    <button class="export-btn">Export Data 📄</button>
+                </div>
+            </div>
+    
+            <!-- Right side: Buttons -->
+             <div>
+           <div class="action-buttons">
+                <button type="button" class="btn btn-outline view-btn">View Analytics</button>
+                <button type="button" class="btn create-new-btn">Create New</button>
+
+           </div>
+           <input type="text" class="form-control search-input mt-3 text-center" placeholder="Search Campaign" aria-label="Search Campaign">
+        </div>
+        </div>
+        <!-- Filter Buttons -->
+        <div class="d-flex justify-content-start mb-3">
+            <button class="btn filter-btn me-2 active" data-filter="all">All</button>
+            <button class="btn filter-btn me-2" data-filter="published">Published</button>
+            <button class="btn filter-btn me-2" data-filter="draft">Draft</button>
+            <button class="btn filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Table for Campaigns -->
+        <table class="table campaign-table">
+            <!-- <thead>
+        <tr>
+          <th>Select</th>
+          <th>Image</th>
+          <th>Campaign Name</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Reach</th>
+          <th>Engagement</th>
+          <th>Actions</th>
+        </tr>
+      </thead> -->
+            <tbody id="campaignTable">
+                <!-- Example Row (Published) -->
+                <tr class="published">
+                    <td><input type="checkbox" class="form-check-input"></td>
+
+                    <td class="d-flex " style="border:none;">
+                        <div class="image-thumbnail-box">
+                            <img src="image.png" alt="Campaign Image" class="image-thumbnail-box-image ">
+                        </div>
+                        <div class="campaign-details">
+                            <small>Jan 11, 2024 - Feb 10, 2024</small>
+                            <span>Campaign Name 1 In Two Lines</span>
+                            <p href="#" class="text-primary">Influencers</p>
+                        </div>
+                    </td>
+
+                    <td><div class="badge  campaign-badge ">Published</div></td>
+
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Reach</small>
+                            <span>80k</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Engagement</small>
+                            <span>1.2k</span>
+                        </div>
+                    </td>
+                    <td class="actions-btns">
+                        <button class="btn "><i class="bi bi-eye"></i>👁</button>
+                        <button class="btn "><i class="bi bi-pencil"></i>✏️</button>
+                    </td>
+                </tr>
+
+                <tr class="completed">
+                    <td><input type="checkbox" class="form-check-input"></td>
+
+                    <td class="d-flex " style="border:none;">
+                        <div class="image-thumbnail-box">
+                            <img src="image.png" alt="Campaign Image" class="image-thumbnail-box-image ">
+                        </div>
+                        <div class="campaign-details">
+                            <small>Jan 11, 2024 - Feb 10, 2024</small>
+                            <span>Campaign Name 1 In Two Lines</span>
+                            <p href="#" class="text-primary">Influencers</p>
+                        </div>
+                    </td>
+
+                    <td><div class="badge  campaign-badge ">Completed</div></td>
+
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Reach</small>
+                            <span>80k</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Engagement</small>
+                            <span>1.2k</span>
+                        </div>
+                    </td>
+                    <td class="actions-btns">
+                        <button class="btn "><i class="bi bi-eye"></i>👁</button>
+                        <button class="btn "><i class="bi bi-pencil"></i>✏️</button>
+                    </td>
+                </tr>
+
+                <tr class="draft">
+                    <td><input type="checkbox" class="form-check-input"></td>
+
+                    <td class="d-flex " style="border:none;">
+                        <div class="image-thumbnail-box">
+                            <img src="image.png" alt="Campaign Image" class="image-thumbnail-box-image ">
+                        </div>
+                        <div class="campaign-details">
+                            <small>Jan 11, 2024 - Feb 10, 2024</small>
+                            <span>Campaign Name 1 In Two Lines</span>
+                            <p href="#" class="text-primary">Influencers</p>
+                        </div>
+                    </td>
+
+                    <td><div class="badge  campaign-badge ">Draft</div></td>
+
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Reach</small>
+                            <span>80k</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="campaign-details">
+                            <small class="text-black fw-bold">Engagement</small>
+                            <span>1.2k</span>
+                        </div>
+                    </td>
+                    <td class="actions-btns">
+                        <button class="btn "><i class="bi bi-eye"></i>👁</button>
+                        <button class="btn "><i class="bi bi-pencil"></i>✏️</button>
+                    </td>
+                </tr>
+
+                <!-- Add more rows with different statuses (draft, completed) -->
+            </tbody>
+        </table>
+
+
+
+        <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-light" id="left-arrow">&larr;</button>
+            <div class="content">if page no. is require</div>
+            <button class="btn btn-light" id="right-arrow" >&rarr; </button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const campaignRows = document.querySelectorAll('#campaignTable tr');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+
+                    // Remove 'active' class from all buttons and add to the clicked one
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Show/Hide campaign rows based on filter
+                    campaignRows.forEach(row => {
+                        if (filter === 'all') {
+                            row.style.display = 'table-row';
+                        } else {
+                            if (row.classList.contains(filter)) {
+                                row.style.display = 'table-row';
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom Styles for the Campaign Table */
+    .campaign-table {
+      width: 100%;
+      background-color: #f9f9f9;
+    }
+
+    .campaign-row {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #e8e8e8;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .campaign-row:hover {
+      border-color: #ffde00;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .campaign-row img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .campaign-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 15px;
+    }
+
+    .campaign-details span {
+      font-weight: 600;
+    }
+
+    .campaign-details small {
+      color: #666;
+    }
+
+    .campaign-badge {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      font-weight: 500;
+    }
+
+    .campaign-status {
+      margin-left: auto;
+    }
+
+    .actions-btns button {
+      margin-right: 10px;
+    }
+
+    .filter-btn.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+    
+    .filter-btn {
+      background-color: #6c757d;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <!-- Filter Buttons -->
+    <div class="d-flex justify-content-start mb-3">
+      <button class="btn filter-btn me-2 active" data-filter="all">All</button>
+      <button class="btn filter-btn me-2" data-filter="published">Published</button>
+      <button class="btn filter-btn me-2" data-filter="draft">Draft</button>
+      <button class="btn filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <!-- Table for Campaigns -->
+    <div class="campaign-table">
+      <!-- Example Row (Published) -->
+      <div class="campaign-row published">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input">
+        </div>
+        <div class="campaign-image">
+          <img src="image.jpg" alt="Campaign Image">
+        </div>
+        <div class="campaign-details">
+          <span>Campaign Name 1 In Two Lines</span>
+          <small>Jan 11, 2024 - Feb 10, 2024</small>
+          <div>
+            <a href="#" class="text-primary me-2"><i class="bi bi-person"></i> Influencers</a>
+          </div>
+        </div>
+        <div class="campaign-status me-4">
+          <span class="badge bg-success campaign-badge">Published</span>
+        </div>
+        <div class="campaign-reach text-center me-4">
+          <div class="fw-bold">Reach</div>
+          <div>80K</div>
+        </div>
+        <div class="campaign-engagement text-center me-4">
+          <div class="fw-bold">Engagement</div>
+          <div>1.2K</div>
+        </div>
+        <div class="actions-btns">
+          <button class="btn btn-light"><i class="bi bi-eye"></i></button>
+          <button class="btn btn-light"><i class="bi bi-pencil"></i></button>
+        </div>
+      </div>
+
+      <!-- Add more rows for different campaign statuses -->
+      <!-- For example, rows with "draft" and "completed" classes -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const campaignRows = document.querySelectorAll('.campaign-row');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+
+          // Remove 'active' class from all buttons and add to the clicked one
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          // Show/Hide campaign rows based on filter
+          campaignRows.forEach(row => {
+            if (filter === 'all') {
+              row.style.display = 'flex';  // Change to 'flex' to preserve row layout
+            } else {
+              if (row.classList.contains(filter)) {
+                row.style.display = 'flex';  // Change to 'flex' to preserve row layout
+              } else {
+                row.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
