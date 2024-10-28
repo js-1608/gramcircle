@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <style>
         .custom-card {
@@ -314,6 +316,20 @@
             width: 25px
         }
 
+        .modal-header-color {
+            background-color: #F5DF35;
+            color: black;
+        }
+
+        .custom-modal {
+            width: max-content;
+            margin: auto;
+            top: 100px;
+
+        }
+.influncer-image{
+    border-radius: 100%;
+}
         /* Responsiveness */
         @media(max-width: 768px) {
             .stats {
@@ -398,7 +414,7 @@
 
                                     <td class="text-center table-cell" style="min-width: 200px;">
                                         <div class="media" style="display: flex;">
-                                            <img src="./images/image (1).png" width="50" height="50">
+                                            <img src="./images/image (1).png" width="50" height="50" class="influncer-image">
                                             <div class="media-body text-nowrap ml-2">
                                                 <p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
                                                 <span class="fs-14">Creative Design Agency</span>
@@ -410,13 +426,21 @@
                                     <td class="text-center table-cell">3</td>
                                     <td class="text-center table-cell">4</td>
                                     <td class="text-center table-cell">
-                                        <div class="date" data-toggle="modal" data-target="#modal1">2024-10-28</div>
-                                        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1"
+
+                                        <div class="date" data-toggle="modal" data-target="#modal2">
+                                            <div class="date" id="dateToggle" style="cursor: pointer;">
+                                                <div class="date" style="cursor: pointer;" onclick="toggleIcon(this)">
+                                                    <span id="">2024-09-28</span>
+                                                    <i class="fa fa-chevron-down toggleIcon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel1"
                                             aria-hidden="true">
-                                            <div class="modal-dialog">
+                                            <div class="modal-dialog custom-modal">
                                                 <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalLabel1">Modal for 2024-10-28
+                                                    <div class="modal-header modal-header-color">
+                                                        <h5 class="modal-title " id="modalLabel1">Dates
                                                         </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
@@ -424,17 +448,36 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>This is the modal for 2024-10-28</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
-                                                            changes</button>
+                                                        <div class="modal-body text-left">
+                                                            <table class="m-auto">
+                                                                <tr class="compensation_table  m-0 p-0">
+                                                                    <td class="light_text p-0">You applied for the campaign
+                                                                    </td>
+                                                                    <td class="light_text p-0"> : &nbsp;</td>
+    
+                                                                    <td><strong>10 Oct, 2024 </strong></td>
+                                                                </tr>
+                                                                <tr class="compensation_table  m-0 p-0">
+                                                                    <td class="light_text p-0">Brand approved</td>
+                                                                    <td class="light_text p-0"> : &nbsp;</td>
+    
+                                                                    <td><strong>12 Oct, 2024 </strong></td>
+                                                                </tr>
+                                                                <tr class="compensation_table m-0 p-0">
+                                                                    <td class="light_text p-0">You submitted content</td>
+                                                                    <td class="light_text p-0"> : &nbsp;</td>
+    
+                                                                    <td><strong>15 Oct, 2024</strong></td>
+                                                                </tr>
+                                                                </table>
+    
+                                                        </div>
+                                                   
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </td>
 
                                 </tr>
@@ -451,7 +494,7 @@
 
                                     <td class="text-center table-cell" style="min-width: 200px;">
                                         <div class="media" style="display: flex;">
-                                            <img src="./images/image (1).png" width="50" height="50">
+                                            <img src="./images/image (1).png" width="50" height="50" class="influncer-image">
                                             <div class="media-body text-nowrap ml-2">
                                                 <p class="text-black font-w600 fs-16 mb-0">Highspeed Studios</p>
                                                 <span class="fs-14">Creative Design Agency</span>
@@ -463,32 +506,56 @@
                                     <td class="text-center table-cell">3</td>
                                     <td class="text-center table-cell">4</td>
                                     <td class="text-center table-cell">
-                                        <div class="date" data-toggle="modal" data-target="#modal1">2024-10-28</div>
-                                        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel1"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog">
+                                        <div class="date" data-toggle="modal" data-target="#modal2-2024-09-28"
+                                            data-date="2024-09-28">
+                                            <div class="date" style="cursor: pointer;" onclick="toggleIcon(this)">
+                                                <span id="">2024-09-28</span>
+                                                <i class="fa fa-chevron-down toggleIcon"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal  fade" id="modal2-2024-09-28" tabindex="-1"
+                                            aria-labelledby="modalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog custom-modal">
                                                 <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalLabel2">Modal for 2024-10-28
+                                                    <div class="modal-header modal-header-color">
+                                                        <h5 class="modal-title" id="modalLabel1">Dates
                                                         </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <p>This is the modal for 2024-10-28</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
-                                                            changes</button>
+                                                    <div class="modal-body text-left">
+                                                        <table class="m-auto">
+                                                            <tr class="compensation_table  m-0 p-0">
+                                                                <td class="light_text p-0">You applied for the campaign
+                                                                </td>
+                                                                <td class="light_text p-0"> : &nbsp;</td>
+
+                                                                <td><strong>10 nov, 2024 </strong></td>
+                                                            </tr>
+                                                            <tr class="compensation_table  m-0 p-0">
+                                                                <td class="light_text p-0">Brand approved</td>
+                                                                <td class="light_text p-0"> : &nbsp;</td>
+
+                                                                <td><strong>12 nov, 2024 </strong></td>
+                                                            </tr>
+                                                            <tr class="compensation_table m-0 p-0">
+                                                                <td class="light_text p-0">You submitted content</td>
+                                                                <td class="light_text p-0"> : &nbsp;</td>
+
+                                                                <td><strong>15 nov, 2024</strong></td>
+                                                            </tr>
+                                                        </table>
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
+
+
                                 </tr>
                             </tbody>
                         </table>
@@ -538,6 +605,23 @@
                 }
             }).trigger('resize'); // Trigger resize to set the initial state
         });
+
+        function toggleIcon(element) {
+            const icon = element.querySelector(".toggleIcon");
+
+            if (icon.classList.contains("fa-chevron-down")) {
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
+            } else {
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down");
+            }
+
+        }
+
+
+
+
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
