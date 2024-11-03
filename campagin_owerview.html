@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Overview</title>
+    <!-- Bootstrap 4.5.2 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .overview-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .metric-box {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .metric-change {
+            font-size: 1em;
+        }
+        .campaign-card, .influencer-list {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 1.25em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Overview Header -->
+    <div class="overview-header">Content Overview</div>
+
+    <!-- Metrics Section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="metric-box">
+                <div>Reach</div>
+                <div class="metric-value">80k <span class="text-success">&#9650; 42.6%</span></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="metric-box">
+                <div>Engagement Rate</div>
+                <div class="metric-value">40k <span class="text-danger">&#9660; 10%</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date and Export Section -->
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <button class="btn btn-outline-secondary">Last 28 days: Jun 18, 2024 - Jul 15, 2024</button>
+        <button class="btn btn-outline-secondary">Export Data</button>
+    </div>
+
+    <!-- Top Performing Campaigns Section -->
+    <div class="section-title mt-4">Top Performing Campaigns</div>
+    <div class="campaign-card">
+        <div class="d-flex align-items-center">
+            <img src="https://via.placeholder.com/80" alt="Campaign Image" class="mr-3 rounded">
+            <div>
+                <div>Campaign Name 1 In Two Lines</div>
+                <div>Jan 11, 2024 - Feb 10, 2024</div>
+            </div>
+            <div class="ml-auto">
+                <div class="metric-value">80k <span class="text-success">&#9650; 42.6%</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="campaign-card">
+        <div class="d-flex align-items-center">
+            <img src="https://via.placeholder.com/80" alt="Campaign Image" class="mr-3 rounded">
+            <div>
+                <div>Campaign Name 2 In Two Lines</div>
+                <div>Jan 11, 2024 - Feb 10, 2024</div>
+            </div>
+            <div class="ml-auto">
+                <div class="metric-value">26k <span class="text-success">&#9650; 42.6%</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Content By Reach Section -->
+    <div class="section-title">Top Content By Reach</div>
+    <div class="row">
+        <div class="col-3">
+            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+        </div>
+        <div class="col-3">
+            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+        </div>
+        <div class="col-3">
+            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+        </div>
+        <div class="col-3">
+            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+        </div>
+    </div>
+
+    <!-- Top Influencers By Reach Section -->
+    <div class="section-title">Top Influencers by Reach</div>
+    <ul class="list-unstyled">
+        <li class="influencer-list d-flex justify-content-between">
+            <span>Name Clickable</span>
+            <span>1.2M</span>
+        </li>
+        <li class="influencer-list d-flex justify-content-between">
+            <span>Name Clickable</span>
+            <span>1.2M</span>
+        </li>
+        <li class="influencer-list d-flex justify-content-between">
+            <span>Name Clickable</span>
+            <span>1.2M</span>
+        </li>
+    </ul>
+</div>
+
+<!-- Bootstrap 4.5.2 JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

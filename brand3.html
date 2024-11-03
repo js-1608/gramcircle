@@ -7,19 +7,19 @@
   <title>Gramcircle.ai Screen</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Slick CSS -->
-
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <style>
     body {
-      background: linear-gradient(128.7deg, #050A30 74.8%, #101F96 100%);
-      background-repeat: no-repeat;
+      background-color: #0a0f24;
       color: white;
-      background-size: cover;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100vh;
     }
 
     .navbar {
@@ -105,97 +105,60 @@
       text-decoration: none;
     }
 
-    /* Badge Styling */
-
-    .we-carousel {
-      position: relative;
-      display: flex;
-      align-items: center;
+    .carousel-container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 40px;
     }
 
-    .we-card-container {
-      width: 200px;
-      height: 200px;
+    .carousel-profile {
       position: relative;
-      margin: auto;
+
     }
 
-    .we-card {
-      width: 250px;
-      height: 400px;
-      background-color: #fff;
-      color: #000;
+    .carousel-profile img {
+      width: 100%;
+      height: auto;
       border-radius: 10px;
-      padding: 10px;
-      box-sizing: border-box;
-      text-align: center;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      transition: all 0.5s ease;
-      filter: none;
+
     }
 
-    .we-card h3 {
-      font-size: 1.5rem;
+    /* Badge Styling */
+    .badge-follower {
+      position: absolute;
+      top: 14px;
+      background-color: #007bff;
+      color: white;
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      right: 28px;
+    }
+
+    .carousel-caption {
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 15px;
+      border-radius: 0 0 10px 10px;
+      /* text-align: left; */
+      color: #000;
+      left: 0;
+      right: 0;
+    }
+
+    .carousel-caption h5 {
+      margin: 0;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
-    .we-card p {
-      color: #555;
+    .carousel-caption p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
     }
-
-    .we-card.active {
-      opacity: 1;
-      z-index: 2;
-      transform: translateX(0);
-    }
-
-    .we-card.prev-1,
-    .we-card.next-1 {
-      opacity: 0.5;
-      filter: blur(4px);
-      z-index: 1;
-    }
-
-    .we-card.prev-1 {
-      transform: translateX(-230px) translateY(20px);
-    }
-
-    .we-card.next-1 {
-      transform: translateX(230px) translateY(20px);
-    }
-
-    .we-arrow {
-      font-size: 24px;
-      cursor: pointer;
-      user-select: none;
-      color: #000000;
-      background: #fff;
-      border-radius: 100%;
-      padding: 10px 15px;
-      z-index: 20;
-    }
-
-    .right {
-      position: relative;
-      right: 0px;
-      top: 120px
-    }
-
-    .left {
-      position: relative;
-      left: 0px;
-      top: 120px;
-    }
-
-
-    .we-arrow:hover {
-      color: #555;
-    }
-
-
 
     /* .slick-slide {opacity: .3;}
 .slick-current{
@@ -233,13 +196,40 @@
       border-bottom-right-radius: 50px;
     }
 
+    .gradient-left,
+    .gradient-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 25%;
+      /* Adjust width as needed */
+      z-index: 1;
+      pointer-events: none;
+    }
 
+    .gradient-left {
+      left: 0;
+      background: linear-gradient(to right, rgba(212, 20, 20, 0.5), transparent);
+    }
+
+    .gradient-right {
+      right: 0;
+      background: linear-gradient(to left, rgba(89, 48, 223, 0.5), transparent);
+    }
 
     /* Responsive styling */
     @media (min-width: 1068px) {
       .main-section {
         flex-direction: row;
         text-align: left;
+      }
+
+      .carousel-container {
+        width: 45%;
+      }
+
+      .content-area {
+        width: 50%;
       }
 
     }
@@ -254,9 +244,6 @@
         font-size: 1rem;
         width: 100%;
       }
-      .right {
-      right: -55px;
-    }
     }
 
     /* Overlay dropdown styling */
@@ -273,15 +260,7 @@
         background-color: #0a0a2e;
         z-index: 1000;
       }
-      .hide-display{
-      display: none;
     }
-      .content-area{
-        width:100% !important;
-      }
-
-    }
-  
   </style>
 </head>
 
@@ -313,84 +292,101 @@
       </ul>
     </div>
   </nav>
-  <div class="main-section h-[100vh]">
+  <div class="main-section m-auto">
     <!-- Left Side Content -->
-    <div class="content-area mt-5">
-      <div class="m-auto">
-        <h1>Brands, Agencies, Local Creators For <strong>Collabs</strong></h1>
-        <p>Easy, Accessible, Efficient and <strong style="color: #ffdd00;">AI-Boosted</strong> campaigns!</p>
-        <button class="btn custom-btn">
-          <span class="btn-text">JOIN THE WAITLIST</span>
-          <span class="arrow">&rarr;</span>
-        </button>
-      </div>
+    <div class="content-area">
+      <h1>Brands, Agencies, Local Creators For <strong>Collabs</strong></h1>
+      <p>Easy, Accessible, Efficient and <strong style="color: #ffdd00;">AI-Boosted</strong> campaigns!</p>
+      <button class="btn custom-btn">
+        <span class="btn-text">JOIN THE WAITLIST</span>
+        <span class="arrow">&rarr;</span>
+      </button>
     </div>
 
     <!-- Right Side Slick Carousel -->
 
-    <div class=" col-md-6 ">
+    <div class="carousel-container  ">
       <!-- <div class="gradient-left"></div> -->
 
-      <div class="we-carousel hide-display mt-md-4">
-        <div class="we-arrow left">&#10094;</div>
-        <div class="we-card-container">
-          <div class="we-card">
-            <h3 class="text-white">Heading 1</h3>
-            <p>First paragraph</p>
-          </div>
-          <div class="we-card">
-            <h3>Heading 2</h3>
-            <p>Second paragraph</p>
-          </div>
-          <div class="we-card">
-            <h3>Heading 3</h3>
-            <p>Third paragraph</p>
-          </div>
+      <div class="center">
 
-        </div>
-        <div class="we-arrow right">&#10095;</div>
+       
+          <div class="carousel-profile">
+            <img
+              src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png"
+              alt="Profile 1">
+            <span class="badge-follower">1.2M Followers</span>
+            <div class="carousel-caption">
+              <h5>Marvin McKinny</h5>
+              <p>Mumbai, Maharashtra</p>
+            </div>
+          </div>
+      
+          <div class="carousel-profile">
+            <img
+              src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png"
+              alt="Profile 2">
+            <span class="badge-follower">800K Followers</span>
+            <div class="carousel-caption">
+              <h5>John Doe</h5>
+              <p>New York, USA</p>
+            </div>
+          </div>
+       
+          <div class="carousel-profile">
+            <img
+              src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png"
+              alt="Profile 3">
+            <span class="badge-follower">500K Followers</span>
+            <div class="carousel-caption">
+              <h5>Jane Smith</h5>
+              <p>London, UK</p>
+            </div>
+          </div>
+ 
       </div>
+      <div class="gradient-right"></div>
+
     </div>
 
   </div>
 
   <!-- jQuery and Slick JS -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
-  <script src="./script.js"></script>
-
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
   <script>
     $(document).ready(function () {
-      let currentCardIndex = 0;
-      const cards = $('.we-card');
-      const totalCards = cards.length;
-
-      function updateCarousel() {
-        cards.removeClass('active prev-1 next-1');
-        $(cards[currentCardIndex]).addClass('active');
-
-        const prevIndex_1 = (currentCardIndex - 1 + totalCards) % totalCards;
-        const nextIndex_1 = (currentCardIndex + 1) % totalCards;
-
-        $(cards[prevIndex_1]).addClass('prev-1');
-        $(cards[nextIndex_1]).addClass('next-1');
-      }
-
-      updateCarousel();
-
-      $('.right').click(function () {
-        currentCardIndex = (currentCardIndex + 1) % totalCards;
-        updateCarousel();
-      });
-
-      $('.left').click(function () {
-        currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
-        updateCarousel();
+      $('.center').slick({
+        centerMode: true,
+        centerPadding: '90px',
+        slidesToShow: 1,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '20px',
+              slidesToShow: 1
+            }
+          }
+        ]
       });
     });
-
   </script>
 </body>
 

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gramcircle.ai Screen</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Slick CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <style>
@@ -17,45 +20,58 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      overflow: hidden;
     }
+
     .navbar {
-      background-color: #0a0f24; /* Dark blue background */
+      background-color: #0a0f24;
+      /* Dark blue background */
     }
+
     .navbar-brand {
-      color: #ffea00 !important; /* Bright yellow logo */
+      color: #ffea00 !important;
+      /* Bright yellow logo */
       font-weight: bold;
       font-size: 1.5rem;
     }
+
     .nav-link {
       color: white !important;
     }
+
     .navbar-nav .nav-item .nav-link:hover {
-      color: #ffea00 !important; /* Yellow hover effect */
+      color: #ffea00 !important;
+      /* Yellow hover effect */
     }
+
     .nav-icons {
       color: white;
       font-size: 1.2rem;
     }
+
     .nav-icons i {
       margin-left: 10px;
     }
+
     .navbar-toggler-icon {
 
-    display: inline-block;
-    width: auto;
-    height: 1.5em;
-    vertical-align: middle;
-    content: "";
-    background: no-repeat center center;
-    background-size: 100% 100%;
-}
-.navbar-toggler {
-    padding: .25rem .75rem;
-    font-size: 1.25rem;
-    background-color: white;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-}
+      display: inline-block;
+      width: auto;
+      height: 1.5em;
+      vertical-align: middle;
+      content: "";
+      background: no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .navbar-toggler {
+      padding: .25rem .75rem;
+      font-size: 1.25rem;
+      background-color: white;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+    }
+
     .main-section {
       display: flex;
       flex-direction: column;
@@ -90,96 +106,202 @@
       text-decoration: none;
     }
 
-    .carousel-container {
-      width: 100%;
-      max-width: 600px;
-      margin-top: 40px;
-    }
 
-    .carousel-profile {
+
+    .we-carousel {
       position: relative;
-
+      display: flex;
+      align-items: center;
     }
 
-    .carousel-profile img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-   
+    .we-card-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
     }
 
-    /* Badge Styling */
-    .badge-follower {
-      position: absolute;
-      top: 14px;
-      background-color: #007bff;
-      color: white;
-      font-size: 0.9rem;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-weight: bold;
-      right: 28px;
-    }
-
-    .carousel-caption {
-      background-color: rgb(255, 255, 255);
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 15px;
-      border-radius: 0 0 10px 10px;
-      /* text-align: left; */
+    .we-card {
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
       color: #000;
-      left:0;
-      right:0;
+      border-radius: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.5s ease;
+      filter: none;
     }
 
-    .carousel-caption h5 {
-      margin: 0;
-      font-size: 1.2rem;
+    .we-card h3 {
+      font-size: 1.5rem;
       font-weight: bold;
     }
 
-    .carousel-caption p {
-      margin: 5px 0 0;
-      font-size: 0.9rem;
+    .we-card p {
+      color: #555;
     }
-.slick-slide {opacity: .3;}
-.slick-current{
-    opacity: 1;
-    background: #fff;
-    border-radius: 9px;
-}
-.custom-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
-    font-weight: bold;
-    color: #000;
-    border: none;
-    border-radius: 50px;
-    overflow: hidden;
-    background-color: #fff;
-}
 
-.custom-btn .btn-text {
-    background-color: #fff;
-    padding: 0.5rem 1rem;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
- 
-}
+    .we-card.active {
+      opacity: 1;
+      z-index: 2;
+      transform: translateX(0);
+    }
 
-.custom-btn .arrow {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #ffcc00;
-    color: #000;
-    font-size: 1.2em;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
+    .we-card.prev-1,
+    .we-card.next-1 {
+      opacity: 0.5;
+      filter: blur(4px);
+      z-index: 1;
+    }
 
+    .we-card.prev-2,
+    .we-card.next-2 {
+      opacity: 0.2;
+      filter: blur(6px);
+      z-index: 1;
+    }
+
+    .we-card.prev-3,
+    .we-card.next-3 {
+      opacity: 0;
+    }
+
+    .we-card.prev-1 {
+      transform: translateX(-230px) rotate(0deg) translateY(20px);
+    }
+
+    .we-card.next-1 {
+      transform: translateX(230px) rotate(0deg) translateY(20px);
+    }
+
+    .we-card.prev-2 {
+      transform: translateX(-483px) rotate(0deg) translateY(80px);
+    }
+
+    .we-card.next-2 {
+      transform: translateX(483px) rotate(0deg) translateY(80px);
+    }
+
+    .we-card.prev-3 {
+      transform: translateX(-697px) rotate(0deg) translateY(172px);
+    }
+
+    .we-card.next-3 {
+      transform: translateX(697px) rotate(0deg) translateY(172px);
+    }
+
+    .we-arrow {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      color: #000000;
+      background: #fff;
+      border-radius: 100%;
+      padding: 10px 15px;
+      z-index: 20;
+    }
+
+    .we-arrow:hover {
+      color: #555;
+    }
+
+    .right {
+      position: relative;
+      right: -27px;
+    }
+
+    .left {
+      position: relative;
+      left: -27px;
+    }
+
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #6b3ad1;
+    }
+
+    .we-carousel {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .we-card-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    .we-card {
+      width: 200px;
+      height: 200px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.5s ease;
+      filter: none;
+    }
+
+    .we-card h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .we-card p {
+      color: #555;
+    }
+
+    .we-card.active {
+      opacity: 1;
+      z-index: 2;
+      transform: translateX(0);
+    }
+
+    .we-card.prev-1,
+    .we-card.next-1 {
+      opacity: 0.5;
+      filter: blur(4px);
+      z-index: 1;
+    }
+
+    .we-card.prev-1 {
+      transform: translateX(-230px) translateY(20px);
+    }
+
+    .we-card.next-1 {
+      transform: translateX(230px) translateY(20px);
+    }
+
+    .we-arrow {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      color: #000;
+      padding: 20px;
+      z-index: 20;
+    }
+
+    .we-arrow:hover {
+      color: #555;
+    }
 
     /* Responsive styling */
     @media (min-width: 1068px) {
@@ -195,24 +317,30 @@
       .content-area {
         width: 50%;
       }
-   
+
     }
+
     @media (max-width: 1268px) {
 
-    .content-area h1 {
+      .content-area h1 {
         font-size: 1.8rem;
       }
+
       .content-area p {
         font-size: 1rem;
         width: 100%;
       }
     }
-     /* Overlay dropdown styling */
-     @media (max-width: 991.98px) { /* Adjust this for desired breakpoint */
+
+    /* Overlay dropdown styling */
+    @media (max-width: 991.98px) {
+
+      /* Adjust this for desired breakpoint */
       .navbar-collapse {
         position: absolute;
         padding: 10px;
-        top: 60px; /* Adjust based on navbar height */
+        top: 60px;
+        /* Adjust based on navbar height */
         right: 0;
         width: 100%;
         background-color: #0a0a2e;
@@ -221,33 +349,35 @@
     }
   </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">Gramcircle.ai</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon">=</span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Book a demo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Subscribe Now</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Policies</a>
-            </li>
-            <li class="nav-item nav-icons d-flex">
-              <a class="nav-link" href="#"><i class="bi bi-tiktok"></i></a>
-              <a class="nav-link" href="#"><i class="bi bi-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Gramcircle.ai</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">=</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Book a demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Subscribe Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Policies</a>
+        </li>
+        <li class="nav-item nav-icons d-flex">
+          <a class="nav-link" href="#"><i class="bi bi-tiktok"></i></a>
+          <a class="nav-link" href="#"><i class="bi bi-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="main-section m-auto">
     <!-- Left Side Content -->
     <div class="content-area">
@@ -256,42 +386,39 @@
       <button class="btn custom-btn">
         <span class="btn-text">JOIN THE WAITLIST</span>
         <span class="arrow">&rarr;</span>
-    </button>
+      </button>
     </div>
 
     <!-- Right Side Slick Carousel -->
-    <div class="carousel-container center ">
-      <div>
-        <div class="carousel-profile">
-          <img src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png" alt="Profile 1">
-          <span class="badge-follower">1.2M Followers</span>
-          <div class="carousel-caption">
-            <h5>Marvin McKinny</h5>
-            <p>Mumbai, Maharashtra</p>
+
+    <div class="carousel-container  ">
+      <!-- <div class="gradient-left"></div> -->
+
+      <div class="we-carousel">
+        <div class="we-arrow left">&#10094;</div>
+        <div class="we-card-container">
+
+          <div class="we-card">
+            <h3>Heading 1</h3>
+            <p>Second paragraph</p>
           </div>
-        </div>
-      </div>
-      <div>
-        <div class="carousel-profile">
-          <img src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png" alt="Profile 2">
-          <span class="badge-follower">800K Followers</span>
-          <div class="carousel-caption">
-            <h5>John Doe</h5>
-            <p>New York, USA</p>
+          <div class="we-card">
+            <h3>Heading 2</h3>
+            <p>Third paragraph</p>
           </div>
-        </div>
-      </div>
-      <div>
-        <div class="carousel-profile">
-          <img src="./images/asian-trendy-woman-vlogging-while-using-smartphone-outdoor-happy-chinese-girl-having-fun-with-new-trends-technology.png" alt="Profile 3">
-          <span class="badge-follower">500K Followers</span>
-          <div class="carousel-caption">
-            <h5>Jane Smith</h5>
-            <p>London, UK</p>
+          <div class="we-card">
+            <h3>Heading 3</h3>
+            <p>Fourth paragraph</p>
           </div>
+
+
         </div>
+        <div class="we-arrow right">&#10095;</div>
       </div>
+      <div class="gradient-right"></div>
+
     </div>
+
   </div>
 
   <!-- jQuery and Slick JS -->
@@ -301,35 +428,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
   <script>
-    $(document).ready(function(){
-      $('.center').slick({
-        centerMode: true,
-        centerPadding: '90px',
-        slidesToShow: 1,
-        // autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '20px',
-              slidesToShow: 1
-            }
-          }
-        ]
+    $(document).ready(function () {
+      let currentCardIndex = 0;
+      const cards = $('.we-card');
+      const totalCards = cards.length;
+
+      function updateCarousel() {
+        cards.removeClass('active prev-1 next-1');
+        $(cards[currentCardIndex]).addClass('active');
+
+        const prevIndex_1 = (currentCardIndex - 1 + totalCards) % totalCards;
+        const nextIndex_1 = (currentCardIndex + 1) % totalCards;
+
+        $(cards[prevIndex_1]).addClass('prev-1');
+        $(cards[nextIndex_1]).addClass('next-1');
+      }
+
+      updateCarousel();
+
+      $('.right').click(function () {
+        currentCardIndex = (currentCardIndex + 1) % totalCards;
+        updateCarousel();
+      });
+
+      $('.left').click(function () {
+        currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
+        updateCarousel();
       });
     });
+
   </script>
 </body>
+
 </html>
