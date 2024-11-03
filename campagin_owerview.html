@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,244 +8,248 @@
     <!-- Bootstrap 4.5.2 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-         .header .menu {
-      display: flex;
-      gap: 10px;
-    }
+        .menu {
+            display: flex;
+            gap: 10px;
+        }
 
-    .menu button,
-    .menu .edit-icon {
-      background-color: #f0f0f0;
-      border: none;
-      padding: 5px;
-      border-radius: 4px;
-    }
-.menu >button{
-  background-color: #fff;
-  color: #c5c5c5;
-}
-.menu >button :hover{
-  background-color: #fff;
-  color: #000000;
-}
-  
- 
+        .menu button,
+        .menu .edit-icon {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .menu>button {
+            background-color: #fff;
+            color: #c5c5c5;
+        }
+
+        .menu>button:hover {
+            color: #000000;
+        }
+
         .metric-value {
             font-size: 2em;
             font-weight: bold;
         }
+
         .metric-change {
             font-size: 1em;
         }
-        .campaign-card, .influencer-list {
+
+        .campaign-card,
+        .influencer-list {
             background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 10px;
         }
+
         .content-image {
             width: 100%;
             height: auto;
             border-radius: 5px;
         }
+
         .section-title {
             font-weight: bold;
             font-size: 1.25em;
             margin-top: 30px;
         }
+
         .stats {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
 
-    .stat-box {
-      padding: 20px;
-      border-radius: 8px;
-      flex: 1;
-      margin: 0 10px;
-      display: flex;
+        .stat-box {
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            display: flex;
+            justify-content: space-evenly;
+        }
 
-    }
+        .text_small {
+            font-size: 16px;
+        }
 
-    .stat-box2 {
-      padding: 10px;
-      margin: 0 10px;
-      width: 40%
-    }
+        .positive {
+            color: green;
+        }
 
-    .stat-box h2 {
-      font-size: 48px;
-      white-space: nowrap;
-    }
+        .negative {
+            color: red;
+        }
 
-    .stat-box p {
-      font-size: 20px;
-    }
+        .date-export-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-    .text_small {
-      font-size: 16px;
-    }
+        .calendar {
+            display: flex;
+            align-items: center;
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-    .positive {
-      color: green;
-    }
+        .calendar-icon {
+            margin-right: 8px;
+        }
 
-    .negative {
-      color: red;
-    }
+        .export-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid black;
+        }
 
-    .date-export-container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 20px;
-    }
+        @media(max-width: 768px) {
+            .overview-header {
+                font-size: 1.5em;
+                text-align: center;
+                margin-bottom: 20px;
+            }
 
-    .calendar {
-      display: flex;
-      align-items: center;
-      border: 1px solid black;
-      padding: 10px;
-      cursor: pointer;
-    }
+            .stats {
+                flex-direction: column;
+            }
 
-    .calendar-icon {
-      margin-right: 8px;
-    }
+            .stat-box {
+                /* flex-direction: column; */
+                /* align-items: flex-start; */
+                margin-bottom: 15px;
+            }
 
-    .export-btn {
-      background-color: #f0f0f0;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border: 1px solid black;
-    }
+            .date-export-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-    @media(max-width: 768px) {
-      .stats {
-        flex-direction: column;
-      }
+            .calendar,
+            .export-btn {
+                width: 100%;
+                margin-top: 10px;
+                justify-content: center;
+            }
 
-      .stat-box {
-        margin: 10px 0;
-      }
+            .section-title {
+                text-align: center;
+                margin-top: 20px;
+            }
 
-      .header h1 {
-        font-size: 20px;
-      }
-
-    
-    }
+            .campaign-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <!-- Overview Header -->
-    <div class="overview-header">Content Overview</div>
+    <div class="container">
+        <!-- Overview Header -->
+        <h1 class="overview-header mt-4">Content Overview</h1>
 
-    <!-- Metrics Section -->
+        <!-- Metrics Section -->
+        <div class="stats">
+            <div class="stat-box">
+                <div>
+                    <p class="mb-0">Reach</p>
+                    <h2>80k <span class="positive text_small ml-1">↑ 42.6%</span></h2>
+                </div>
+                <div>
+                    <p class="mb-0">Engagement Rate</p>
+                    <h2>40k <span class="negative text_small">↓ 10%</span></h2>
+                </div>
+            </div>
 
-      <div class="header mx-4">
-        <h1 >Campaign Name 1 In Two Lines</h1>
-        <div class="menu">
-          <button class="btn">Details</button>
-          <button class="btn">Influencer List</button>
-          <button class="btn">Analytics</button>
-          <button class="btn ">✏️</button>
+            <div class="date-export-container">
+                <div class="calendar">
+                    <span class="calendar-icon">📅</span>
+                    <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
+                </div>
+                <button class="export-btn">Export Data 📄</button>
+            </div>
         </div>
-      </div>
-  
-      <div class="stats">
-        <div class="stat-box col-md-6">
-          <div class="stat-box2" style="border-right: 1px solid black; ">
-            <p class="mb-0">Reach </p>
-            <h2>80k<span class="positive text_small ml-1">↑ 42.6%</span></h2>
-          </div>
-          <div class="stat-box2">
-            <p class="mb-0" style="white-space: nowrap;">Engagement Rate </p>
-            <h2>40k <span class="negative text_small ">↓ 10%</span></h2>
-          </div>
-        </div>
-        <div class="date-export-container col-md-6">
-          <div class="calendar col-md-8">
-            <span class="calendar-icon">📅</span>
-            
-            <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
-          </div>
-          <button class="export-btn">Export Data 📄</button>
-        </div>
-      </div>
 
-    <!-- Top Performing Campaigns Section -->
-    <div class="section-title mt-4">Top Performing Campaigns</div>
-    <div class="campaign-card">
-        <div class="d-flex align-items-center">
+        <!-- Top Performing Campaigns Section -->
+        <div class="section-title">Top Performing Campaigns</div>
+        <div class="campaign-card d-flex align-items-center">
             <img src="https://via.placeholder.com/80" alt="Campaign Image" class="mr-3 rounded">
             <div>
                 <div>Campaign Name 1 In Two Lines</div>
                 <div>Jan 11, 2024 - Feb 10, 2024</div>
             </div>
             <div class="ml-auto">
-                <div class="metric-value">80k <span class="text-success">&#9650; 42.6%</span></div>
+                <div class="metric-value">80k <span class="positive text_small ml-1">↑ 42.6%</span></div>
             </div>
         </div>
-    </div>
-    <div class="campaign-card">
-        <div class="d-flex align-items-center">
+        <div class="campaign-card d-flex align-items-center">
             <img src="https://via.placeholder.com/80" alt="Campaign Image" class="mr-3 rounded">
             <div>
                 <div>Campaign Name 2 In Two Lines</div>
                 <div>Jan 11, 2024 - Feb 10, 2024</div>
             </div>
             <div class="ml-auto">
-                <div class="metric-value">26k <span class="text-success">&#9650; 42.6%</span></div>
+                <div class="metric-value">26k <span class="positive text_small ml-1">↑ 42.6%</span></div>
             </div>
         </div>
+
+        <!-- Top Content By Reach Section -->
+        <div class="section-title">Top Content By Reach</div>
+        <div class="row">
+            <div class="col-6 col-md-3 mb-3">
+                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+            </div>
+        </div>
+
+        <!-- Top Influencers By Reach Section -->
+        <div class="section-title">Top Influencers by Reach</div>
+        <ul class="list-unstyled">
+            <li class="influencer-list d-flex justify-content-between">
+                <span>Name Clickable</span>
+                <span>1.2M</span>
+            </li>
+            <li class="influencer-list d-flex justify-content-between">
+                <span>Name Clickable</span>
+                <span>1.2M</span>
+            </li>
+            <li class="influencer-list d-flex justify-content-between">
+                <span>Name Clickable</span>
+                <span>1.2M</span>
+            </li>
+        </ul>
     </div>
 
-    <!-- Top Content By Reach Section -->
-    <div class="section-title">Top Content By Reach</div>
-    <div class="row">
-        <div class="col-3">
-            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-        </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-        </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-        </div>
-        <div class="col-3">
-            <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-        </div>
-    </div>
-
-    <!-- Top Influencers By Reach Section -->
-    <div class="section-title">Top Influencers by Reach</div>
-    <ul class="list-unstyled">
-        <li class="influencer-list d-flex justify-content-between">
-            <span>Name Clickable</span>
-            <span>1.2M</span>
-        </li>
-        <li class="influencer-list d-flex justify-content-between">
-            <span>Name Clickable</span>
-            <span>1.2M</span>
-        </li>
-        <li class="influencer-list d-flex justify-content-between">
-            <span>Name Clickable</span>
-            <span>1.2M</span>
-        </li>
-    </ul>
-</div>
-
-<!-- Bootstrap 4.5.2 JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 4.5.2 JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
