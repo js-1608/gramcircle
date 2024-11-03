@@ -56,8 +56,8 @@
 
         .section-title {
             font-weight: bold;
-            font-size: 1.25em;
-            margin-top: 30px;
+            font-size: 1em;
+            margin-bottom: 10px;
         }
 
         .stats {
@@ -116,6 +116,22 @@
             border: 1px solid black;
         }
 
+        .influncer_list {
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+        .reach-count {
+            color: #0038AB;
+            font-weight: bolder;
+        }
+        .performing-div{
+        border: 1px solid #E4E4E4;
+        box-shadow: 1px 4px 12px 0px #0000001F;
+        border-radius: 8px;
+
+
+        }
         @media(max-width: 768px) {
             .overview-header {
                 font-size: 1.5em;
@@ -188,7 +204,7 @@
         </div>
 
         <!-- Top Performing Campaigns Section -->
-        <div class="section-title">Top Performing Campaigns</div>
+         <div class="performing-div p-4">        <div class="section-title">Top Performing Campaigns</div>
         <div class="campaign-card d-flex align-items-center">
             <img src="https://via.placeholder.com/80" alt="Campaign Image" class="mr-3 rounded">
             <div>
@@ -209,40 +225,59 @@
                 <div class="metric-value">26k <span class="positive text_small ml-1">↑ 42.6%</span></div>
             </div>
         </div>
+    </div>
 
         <!-- Top Content By Reach Section -->
-        <div class="section-title">Top Content By Reach</div>
-        <div class="row">
-            <div class="col-6 col-md-3 mb-3">
-                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+        <div class="border p-4 rounded-sm mt-4">
+            <div class="section-title">Top Content By Reach</div>
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="https://via.placeholder.com/150" alt="Content" class="content-image">
+                </div>
             </div>
         </div>
 
         <!-- Top Influencers By Reach Section -->
+         <div class="border p-4 rounded-sm mt-4">
         <div class="section-title">Top Influencers by Reach</div>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled influncer_list">
             <li class="influencer-list d-flex justify-content-between">
-                <span>Name Clickable</span>
-                <span>1.2M</span>
+                <span><img src="https://via.placeholder.com/50" alt="Content" class=""><a href="#" class="ml-2">Name
+                        Clickable</a></span>
+                <span class="reach-count">1.2M</span>
             </li>
             <li class="influencer-list d-flex justify-content-between">
-                <span>Name Clickable</span>
-                <span>1.2M</span>
+                <span><img src="https://via.placeholder.com/50" alt="Content" class=""><a href="#" class="ml-2">Name
+                        Clickable</a></span>
+                <span class="reach-count">1.2M</span>
             </li>
             <li class="influencer-list d-flex justify-content-between">
-                <span>Name Clickable</span>
-                <span>1.2M</span>
+                <span><img src="https://via.placeholder.com/50" alt="Content" class=""><a href="#" class="ml-2">Name
+                        Clickable</a></span>
+                <span class="reach-count">1.2M</span>
+            </li>
+
+            <li class="influencer-list d-flex justify-content-between">
+                <span><img src="https://via.placeholder.com/50" alt="Content" class=""><a href="#" class="ml-2">Name
+                        Clickable</a></span>
+                <span class="reach-count">1.2M</span>
+            </li>
+            <li class="influencer-list d-flex justify-content-between">
+                <span><img src="https://via.placeholder.com/50" alt="Content" class=""><a href="#" class="ml-2">Name
+                        Clickable</a></span>
+                <span class="reach-count">1.2M</span>
             </li>
         </ul>
+    </div>
     </div>
 
     <!-- Bootstrap 4.5.2 JS, Popper.js, and jQuery -->
