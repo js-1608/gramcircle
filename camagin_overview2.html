@@ -7,28 +7,17 @@
     <!-- Bootstrap 4.5.2 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-         .header .menu {
-      display: flex;
-      gap: 10px;
-    }
-
-    .menu button,
-    .menu .edit-icon {
-      background-color: #f0f0f0;
-      border: none;
-      padding: 5px;
-      border-radius: 4px;
-    }
-.menu >button{
-  background-color: #fff;
-  color: #c5c5c5;
-}
-.menu >button :hover{
-  background-color: #fff;
-  color: #000000;
-}
-  
- 
+        .overview-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .metric-box {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
         .metric-value {
             font-size: 2em;
             font-weight: bold;
@@ -53,91 +42,6 @@
             font-size: 1.25em;
             margin-top: 30px;
         }
-        .stats {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .stat-box {
-      padding: 20px;
-      border-radius: 8px;
-      flex: 1;
-      margin: 0 10px;
-      display: flex;
-
-    }
-
-    .stat-box2 {
-      padding: 10px;
-      margin: 0 10px;
-      width: 40%
-    }
-
-    .stat-box h2 {
-      font-size: 48px;
-      white-space: nowrap;
-    }
-
-    .stat-box p {
-      font-size: 20px;
-    }
-
-    .text_small {
-      font-size: 16px;
-    }
-
-    .positive {
-      color: green;
-    }
-
-    .negative {
-      color: red;
-    }
-
-    .date-export-container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .calendar {
-      display: flex;
-      align-items: center;
-      border: 1px solid black;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .calendar-icon {
-      margin-right: 8px;
-    }
-
-    .export-btn {
-      background-color: #f0f0f0;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border: 1px solid black;
-    }
-
-    @media(max-width: 768px) {
-      .stats {
-        flex-direction: column;
-      }
-
-      .stat-box {
-        margin: 10px 0;
-      }
-
-      .header h1 {
-        font-size: 20px;
-      }
-
-    
-    }
     </style>
 </head>
 <body>
@@ -147,37 +51,26 @@
     <div class="overview-header">Content Overview</div>
 
     <!-- Metrics Section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="metric-box">
+                <div>Reach</div>
+                <div class="metric-value">80k <span class="text-success">&#9650; 42.6%</span></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="metric-box">
+                <div>Engagement Rate</div>
+                <div class="metric-value">40k <span class="text-danger">&#9660; 10%</span></div>
+            </div>
+        </div>
+    </div>
 
-      <div class="header mx-4">
-        <h1 >Campaign Name 1 In Two Lines</h1>
-        <div class="menu">
-          <button class="btn">Details</button>
-          <button class="btn">Influencer List</button>
-          <button class="btn">Analytics</button>
-          <button class="btn ">✏️</button>
-        </div>
-      </div>
-  
-      <div class="stats">
-        <div class="stat-box col-md-6">
-          <div class="stat-box2" style="border-right: 1px solid black; ">
-            <p class="mb-0">Reach </p>
-            <h2>80k<span class="positive text_small ml-1">↑ 42.6%</span></h2>
-          </div>
-          <div class="stat-box2">
-            <p class="mb-0" style="white-space: nowrap;">Engagement Rate </p>
-            <h2>40k <span class="negative text_small ">↓ 10%</span></h2>
-          </div>
-        </div>
-        <div class="date-export-container col-md-6">
-          <div class="calendar col-md-8">
-            <span class="calendar-icon">📅</span>
-            
-            <span>Last 28 days: Jun 18, 2024 - Jul 15, 2024</span>
-          </div>
-          <button class="export-btn">Export Data 📄</button>
-        </div>
-      </div>
+    <!-- Date and Export Section -->
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <button class="btn btn-outline-secondary">Last 28 days: Jun 18, 2024 - Jul 15, 2024</button>
+        <button class="btn btn-outline-secondary">Export Data</button>
+    </div>
 
     <!-- Top Performing Campaigns Section -->
     <div class="section-title mt-4">Top Performing Campaigns</div>
