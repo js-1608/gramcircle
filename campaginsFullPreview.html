@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makeup Product Launch</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css'>
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    .carousel-item {
+      display: flex;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .carousel-inner .col-md-4 {
+      padding: 0 5px;
+      /* Add small space between images */
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        display: block;
+      }
+    }
+
+    /* Custom styling for sections */
+    .brand-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .promotion-info {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .deliverable-card,
+    .timeline-card,
+    .brand-details,
+    .about-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .badge-pill {
+      border-radius: 20px;
+    }
+
+    .price-tag2 {
+      font-weight: bold;
+      background-color: #ffbf00;
+      padding: 5px 20px;
+      width: fit-content;
+      margin-left: auto;
+
+    }
+
+    /* carousel */
+    .carousel-wrap {
+      margin: 90px auto;
+      padding: 0 5%;
+      width: 80%;
+      position: relative;
+    }
+
+    /* fix blank or flashing items on carousel */
+    .owl-carousel .item {
+      position: relative;
+      z-index: 100;
+      -webkit-backface-visibility: hidden;
+    }
+
+    /* end fix */
+    .owl-nav>div {
+      margin-top: -26px;
+      position: absolute;
+      top: 50%;
+      color: #cdcbcd;
+    }
+
+    .owl-nav i {
+      font-size: 52px;
+    }
+
+    .owl-nav .owl-prev {
+      left: -30px;
+    }
+
+    .owl-nav .owl-next {
+      right: -30px;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+
+      .promotion-info,
+      .deliverable-card,
+      .timeline-card {
+        /* text-align: center; */
+      }
+    }
+
+    .campagin-heading {
+      font-size: 16px;
+    }
+
+    .promo-card {
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .promo-header {
+      position: relative;
+    }
+
+    .promo-header img {
+      width: 100%;
+      height: auto;
+    }
+
+    .promo-price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #FFEB3B;
+      padding: 10px;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .promo-content {
+      padding: 20px;
+    }
+
+    .brand-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0038AB;
+    }
+
+    .tags .btn {
+      margin-right: 5px;
+      margin-bottom: 10px;
+    }
+
+    .timelines {
+      margin: 20px 0;
+    }
+
+    .timeline-label {
+      margin-bottom: 5px;
+      width: 30%;
+    }
+
+    .date-label {
+      color: gray;
+      margin-right: 5px;
+    }
+
+    .card-title {
+      color: white;
+      /* Text color */
+      font-size: 20px;
+      /* Adjust size according to your needs */
+      font-weight: bold;
+      /* Bold text */
+      text-shadow: 2px 2px 4px #000000;
+
+      /* padding: 20px; Padding to create space around the text */
+    }
+
+    .deliverables,
+    .alerts {
+      margin-top: 20px;
+    }
+
+    .alert-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .alert-list li {
+      margin-bottom: 10px;
+    }
+
+    .bg_btn {
+      background: #FFFCF2;
+      color: black;
+    }
+
+    .image-section {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .timeline-dates-row td {
+      padding: 5px;
+      font-size: 14px;
+      /* text-align: center; */
+      padding: 3%;
+    }
+
+    .location {
+      margin-top: 3%;
+    }
+
+    /* .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 123, 255, 0.5);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: left;
+} */
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.1));
+      color: #fff;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: left;
+
+    }
+
+    .image-section:hover .overlay {
+      opacity: 1;
+    }
+
+    .height-div {
+      min-height: fit-content;
+      height: 400px
+    }
+
+    .light_text {
+      color: #6C6C6C;
+    }
+
+    /* .price-tag {
+      position: absolute;
+      top: 25px;
+      right: 10px;
+      background-color: #F5DF35;
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-weight: bold;
+      border: 1px solid white;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    } */
+
+    .td_width {
+      width: 32%;
+    }
+
+    .status-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: bold;
+      border-radius: 100%;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .status-tag_img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .compensation_table td {
+
+      /* border: 1px solid red; */
+      justify-content: space-around;
+      padding: 5px 0px;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: black;
+      /* Changes the color for supported browsers */
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Carousel Section -->
+   
+  <div class="carousel-wrap">
+    <div class="owl-carousel">
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+      <div class="item"><img src="http://placehold.it/150x150"></div>
+    </div>
+  </div>
+
+  <!-- Promotion Info Section -->
+  <div class="container mt-4">
+    <!-- Promotion Info -->
+    <div class="promotion-info mt-4 p-3">
+      <div class="d-flex align-items-center">
+        <img src="https://via.placeholder.com/80" class="brand-logo mr-3" alt="Brand Logo">
+        <div>
+          <h4>Global Footsteps - Beauty From Around The World</h4>
+          <p>New Product Launch</p>
+        </div>
+        <div class="ml-auto text-right">
+          <p class="mb-0"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+          <div class="price-tag2 rounded-pill">
+            $200 - $800
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task and Details Section -->
+    <div class="row">
+      <!-- Brand Name Section -->
+      <div class="col-md-4 ">
+        <div class="brand-details p-3 height-div">
+          <h3 class="brand-name">Brand Name</h3>
+
+          <p class="light_text">COSMETICS LOGO</p>
+
+          <!-- Tags -->
+          <div class="tags mb-4">
+            <button class="btn btn-outline-warning bg_btn" style="font-size: 12px;">Automotive Technologies</button>
+            <button class="btn btn-outline-warning bg_btn" style="font-size: 12px;">Restaurants & Hotels</button>
+            <button class="btn btn-outline-warning bg_btn" style="font-size: 12px;">Food & Beverages</button>
+          </div>
+
+          <!-- Compensation Details -->
+          <h5 class="brand-name">Compensations</h5>
+
+          <table>
+            <tr class="compensation_table">
+              <td class="light_text">Creator Benefit </td>
+              <td class="light_text"> : &nbsp;</td>
+
+              <td><strong>Product</strong></td>
+            </tr>
+            <tr class="compensation_table">
+              <td class="light_text">Fulfillment Mode</td>
+              <td class="light_text"> : &nbsp;</td>
+
+              <td><strong>Direct Shipping</strong></td>
+            </tr>
+            <tr class="compensation_table">
+              <td class="light_text">Creator Reward</td>
+              <td class="light_text"> : &nbsp;</td>
+
+              <td><strong>Barter</strong></td>
+            </tr>
+            <tr class="compensation_table">
+              <td class="light_text">Reward Details</td>
+              <td class="light_text"> : &nbsp;</td>
+
+              <td><strong>Direct Shipping</strong></td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+
+      <!-- Deliverable Task Section -->
+      <div class="col-md-4 ">
+        <div class="deliverable-card p-3 height-div">
+          <!-- Deliverables -->
+          <div class="deliverables">
+            <h5 class="brand-name">Deliverable Task</h5>
+            <button class="btn btn-warning">Posts - 2</button>
+            <button class="btn btn-warning ">Reels - 2</button>
+            <button class="btn btn-warning ">Stories - 4</button>
+
+          </div>
+
+          <!-- Alerts -->
+          <div class="alerts">
+            <h5 class="brand-name">Alerts</h5>
+            <ul class="alert-list">
+              <li><input type="checkbox" checked> Approved to participate</li>
+              <li><input type="checkbox" checked> Voucher Redemption</li>
+              <li><input type="checkbox" checked> Event Details</li>
+              <li><input type="checkbox" checked> Brand Merchandise is on the way!</li>
+              <li><input type="checkbox" checked> Brand Review Content</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timelines Section -->
+      <div class="col-md-4 ">
+        <div class="timeline-card p-3 height-div">
+          <div class="timelines">
+            <h5 class="brand-name">Timelines</h5>
+            <table class="timelines">
+              <tr class="timeline-dates-row">
+                <td class=" light_text td_width">Sign-up
+                </td>
+                <td class=" light_text">|
+                </td>
+                <td class="td_width">
+                  <span class="date-label td_width">Start date</span> <br>
+                  <strong class="date">10/10/2024</strong>
+                </td>
+                <td class="timeline-dates">
+                  <span class="date-label td_width">End date</span> <br>
+                  <strong class="date">25/10/2024</strong>
+                </td>
+              </tr>
+
+              <tr class="timeline-dates-row">
+                <td class=" light_text td_width">Product delivery
+                </td>
+                <td class=" light_text">|</td>
+                <td class="td_width">
+                  <span class="date-label">Start date</span> <br>
+                  <strong class="date">10/10/2024</strong>
+                </td>
+                <td class="td_width">
+                  <span class="date-label">End date</span> <br>
+                  <strong class="date">25/10/2024</strong>
+                </td>
+              </tr>
+
+              <tr class="timeline-dates-row">
+                <td class=" light_text td_width">Posting
+                <td class=" light_text">|
+                </td>
+                </td>
+                <td class="td_width">
+                  <span class="date-label ">Start date</span> <br>
+                  <strong class="date">10/10/2024</strong>
+                </td>
+                <td class="td_width"><span class="date-label ">End date</span>
+                  <strong class="date">25/10/2024</strong>
+                </td>
+              </tr>
+
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- About and Collaboration Section -->
+      <div class="col-md-12">
+        <div class="about-card mt-4">
+          <h5 class="campagin-heading">About Promotion</h5>
+          <p>
+            Beauty From Around The World is excited to unveil our latest footwear collection, inspired by global fashion
+            capitals...
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, veritatis voluptatum? Ut harum aut
+            similique eligendi perferendis eaque, praesentium, earum quia rerum deserunt, iste quaerat ducimus dolor
+            voluptates voluptatem suscipit!
+          </p>
+          <h5 class="campagin-heading">Collaboration Details</h5>
+          <p>
+            We're inviting creative micro-influencers to be part of our global-inspired footwear launch on Instagram...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js'></script>
+  <script src='https://use.fontawesome.com/826a7e3dce.js'></script>
+  <script src="./script.js"></script>
+
+  <script>
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [
+        "<i class='fa fa-caret-left'></i>",
+        "<i class='fa fa-caret-right'></i>"
+      ],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>

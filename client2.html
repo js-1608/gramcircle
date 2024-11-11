@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,23 @@
     body {
       font-family: 'Arial', sans-serif;
     }
+
     .promo-card {
       border-radius: 20px;
       overflow: hidden;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #f3f3f3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     .promo-header {
       position: relative;
     }
+
     .promo-header img {
       width: 100%;
       height: auto;
     }
+
     .promo-price {
       position: absolute;
       top: 10px;
@@ -33,74 +38,91 @@
       font-size: 16px;
       font-weight: bold;
     }
+
     .promo-content {
       padding: 20px;
     }
- 
+
     .brand-name {
-     font-size: 16px;
-     font-weight: 600;
-     color: #0038AB;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0038AB;
     }
+
     .tags .btn {
       margin-right: 5px;
       margin-bottom: 10px;
     }
+
     .timelines {
       margin: 20px 0;
     }
+
     .timeline-label {
       margin-bottom: 5px;
       width: 30%;
     }
-    .date-label {
-  color: gray;
-  margin-right: 5px;
-}
-.card-title{
-  color: white; /* Text color */
-  font-size: 20px; /* Adjust size according to your needs */
-  font-weight: bold; /* Bold text */
-  text-shadow: 2px 2px 4px #000000;
 
-  /* padding: 20px; Padding to create space around the text */
-}
-    .deliverables, .alerts {
+    .date-label {
+      color: gray;
+      margin-right: 5px;
+    }
+
+    .card-title {
+      color: white;
+      /* Text color */
+      font-size: 20px;
+      /* Adjust size according to your needs */
+      font-weight: bold;
+      /* Bold text */
+      text-shadow: 2px 2px 4px #000000;
+
+      /* padding: 20px; Padding to create space around the text */
+    }
+
+    .deliverables,
+    .alerts {
       margin-top: 20px;
     }
+
     .alert-list {
       list-style: none;
       padding: 0;
     }
+
     .alert-list li {
       margin-bottom: 10px;
     }
 
-   .bg_btn{
-    background: #FFFCF2;
-    color: black;
-   } 
-.image-section {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-}
+    .bg_btn {
+      background: #FFFCF2;
+      color: black;
+    }
 
-.image-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.timeline-dates-row td{
-  padding:5px;
-  font-size: 14px;
-  /* text-align: center; */
-  padding: 3%;
-}
-.location{
-  margin-top: 3%;
-}
-/* .overlay {
+    .image-section {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .timeline-dates-row td {
+      padding: 5px;
+      font-size: 14px;
+      /* text-align: center; */
+      padding: 3%;
+    }
+
+    .location {
+      margin-top: 3%;
+    }
+
+    /* .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -112,104 +134,164 @@
   transition: opacity 0.3s ease;
   text-align: left;
 } */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /* background: linear-gradient(to top, rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.1)); */
-  color: #fff;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: left;
-  -webkit-box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255,0.9);
--moz-box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255,0.9);
-box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255,0.9);
-  
-}
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* background: linear-gradient(to top, rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.1)); */
+      color: #fff;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: left;
+      -webkit-box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255, 0.9);
+      -moz-box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255, 0.9);
+      box-shadow: inset 0px -72px 94px -20px rgba(0, 123, 255, 0.9);
 
-.image-section:hover .overlay {
-  opacity: 1;
-}
-
-.light_text{
-  color: #6C6C6C;
-}
-.price-tag {
-  position: absolute;
-  top: 25px;
-  right: 10px;
-  background-color: #F5DF35;
-  padding: 5px 10px;
-  border-radius: 50px;
-  font-weight: bold;
-  border: 1px solid white;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
-}
-.td_width{
-  width: 32%  ;
-}
-
-.status-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #fff;
-  border-radius: 5px;
-  font-weight: bold;
-  border-radius: 100%;
-  width: 80px;
-  height: 80px;
-  overflow: hidden;
-}
-.status-tag_img {
-  width:100%;
-  height: 100%;
-}
-
-.compensation_table td{
-
-  /* border: 1px solid red; */
-  justify-content: space-around;
-  padding: 5px 0px;
-}
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  accent-color: black; /* Changes the color for supported browsers */
-  margin-right: 10px;
-}
+    }
 
 
+    /* new css */
+    .section-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .tag-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .tag-buttons .btn {
+      background: #f1f1f1;
+      border: 1px solid transparent;
+      color: #333;
+      border-radius: 20px;
+      padding: 5px 15px;
+    }
+
+    .tag-buttons .btn.active {
+      border-color: #007bff;
+      color: #007bff;
+      background-color: #fff;
+    }
+
+    .criteria-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .criteria-item {
+      margin-bottom: 10px;
+    }
+
+    .criteria-item span {
+      font-weight: bold;
+    }
+
+    /* new css ended */
+
+    .image-section:hover .overlay {
+      opacity: 1;
+    }
+
+    .light_text {
+      color: #6C6C6C;
+    }
+
+    .price-tag {
+      position: absolute;
+      top: 25px;
+      right: 10px;
+      background-color: #F5DF35;
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-weight: bold;
+      border: 1px solid white;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .td_width {
+      width: 32%;
+    }
+
+    .status-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      border-radius: 5px;
+      font-weight: bold;
+      border-radius: 100%;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .status-tag_img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .compensation_table td {
+
+      /* border: 1px solid red; */
+      justify-content: space-around;
+      padding: 5px 0px;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: black;
+      /* Changes the color for supported browsers */
+      margin-right: 10px;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="container my-5 col-md-4">
     <div class="promo-card">
-  
+
       <div class="image-section">
         <img src="./image.png" class="card-img-top" alt="Cosmetics Product Image">
         <div class="overlay">
           <div style="padding: 20px;">
-          <h5 class="card-title">
-            Global Footsteps - Beauty From Around The World - New Product Launch</h5>
-            
+            <h5 class="card-title">
+              Global Footsteps - Beauty From Around The World - New Product Launch</h5>
+
             <p class="location">
               <img src="./instagram (3) 4.png" width="25" style="width: 35px; margin-right: 3%;">
               <img src="./Group 230.png" width="20" style="width: 25px;">
-              Mumbai, Maharashtra</p>
+              Mumbai, Maharashtra
+            </p>
           </div>
-          
+
         </div>
         <div class="price-tag">$200 - $800</div>
         <div class="status-tag"><img class="status-tag_img" src="./image 13.png"></div>
       </div>
       <!-- Content Section -->
       <div class="promo-content">
-       
+
         <h3 class="brand-name">Brand Name</h3>
 
         <p class="light_text">COSMETICS LOGO</p>
@@ -221,44 +303,17 @@ input[type="checkbox"] {
           <button class="btn btn-outline-warning bg_btn">Food & Beverages</button>
         </div>
 
-        <!-- Compensation Details -->
-        <h5 class="brand-name">Compensations</h5>
- 
-        <table>
-      <tr class="compensation_table">
-          <td class="light_text">Creator Benefit </td>
-          <td class="light_text"> : &nbsp;</td>
-
-          <td><strong>Product</strong></td>
-      </tr>
-      <tr class="compensation_table">
-          <td class="light_text">Fulfillment Mode</td>
-          <td class="light_text"> : &nbsp;</td>
-
-          <td><strong>Direct Shipping</strong></td>
-      </tr>
-      <tr class="compensation_table">
-          <td class="light_text">Creator Reward</td>
-          <td class="light_text"> : &nbsp;</td>
-
-          <td><strong>Barter</strong></td>
-      </tr>
-      <tr class="compensation_table">
-          <td class="light_text">Reward Details</td>
-          <td class="light_text"> : &nbsp;</td>
-
-          <td><strong>Direct Shipping</strong></td>
-      </tr>
-    </table>
-        <!-- Dropdowns -->
-        <div class="accordion mt-4" id="accordionExample" >
+         <!-- Dropdowns -->
+         <div class="accordion mt-4" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
                 About Promotion
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOne" class="accordion-collapse collapse sh ow" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 Details about the promotion go here.
               </div>
@@ -266,11 +321,13 @@ input[type="checkbox"] {
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Collaboration Details
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 Details about the collaboration go here.
               </div>
@@ -278,7 +335,73 @@ input[type="checkbox"] {
           </div>
         </div>
 
+        <!-- Tag Account Section -->
+        <div class="section-box">
+          <div class="brand-name">Tag Account</div>
+          <div class="tag-buttons">
+            <button class="btn" onclick="toggleActive(this)">Tag account 1</button>
+            <button class="btn" onclick="toggleActive(this)">Tag account 2</button>
+            <button class="btn" onclick="toggleActive(this)">Tag account 3</button>
+          </div>
+        </div>  
+          <div class="section-box">
+           <!-- Compensation Details -->
+           <h5 class="brand-name">Compensations</h5>
+
+           <table>
+             <tr class="compensation_table">
+               <td class="light_text">Creator Benefit </td>
+               <td class="light_text"> : &nbsp;</td>
+   
+               <td><strong>Product</strong></td>
+             </tr>
+             <tr class="compensation_table">
+               <td class="light_text">Fulfillment Mode</td>
+               <td class="light_text"> : &nbsp;</td>
+   
+               <td><strong>Direct Shipping</strong></td>
+             </tr>
+             <tr class="compensation_table">
+               <td class="light_text">Creator Reward</td>
+               <td class="light_text"> : &nbsp;</td>
+   
+               <td><strong>Barter</strong></td>
+             </tr>
+             <tr class="compensation_table">
+               <td class="light_text">Reward Details</td>
+               <td class="light_text"> : &nbsp;</td>
+   
+               <td><strong>Direct Shipping</strong></td>
+             </tr>
+           </table>
+          </div>
+
+        <!-- Criteria Section -->
+        <div class="section-box">
+          <div class="brand-name">Criteria</div>
+          <div class="criteria-list">
+            <div class="criteria-item">
+              Age: <span>18 - 25 Years</span>
+            </div>
+            <div class="criteria-item">
+              Gender: <span>Male/Female</span>
+            </div>
+            <div class="criteria-item">
+              Followers: <span>Above 200k</span>
+            </div>
+            <div class="criteria-item">
+              Engagement: <span>3%</span>
+            </div>
+            <div class="criteria-item">
+              Participant: <span>Limit (1,2,3)</span>
+            </div>
+          </div>
+        </div>
+     
+       
+
         <!-- Timelines -->
+       <div class="section-box">
         <div class="timelines">
           <h5 class="brand-name">Timelines</h5>
           <table class="timelines">
@@ -287,49 +410,53 @@ input[type="checkbox"] {
               </td>
               <td class=" light_text">|
               </td>
-              <td class="td_width" >
+              <td class="td_width">
                 <span class="date-label td_width">Start date</span> <br>
-                <strong class="date">10/10/2024</strong> 
+                <strong class="date">10/10/2024</strong>
               </td>
               <td class="timeline-dates">
                 <span class="date-label td_width">End date</span> <br>
                 <strong class="date">25/10/2024</strong>
               </td>
             </tr>
-            
+
             <tr class="timeline-dates-row">
               <td class=" light_text td_width">Product delivery
               </td>
               <td class=" light_text">|</td>
               <td class="td_width">
                 <span class="date-label">Start date</span> <br>
-                <strong class="date">10/10/2024</strong> 
+                <strong class="date">10/10/2024</strong>
               </td>
               <td class="td_width">
                 <span class="date-label">End date</span> <br>
                 <strong class="date">25/10/2024</strong>
               </td>
             </tr>
-            
+
             <tr class="timeline-dates-row">
               <td class=" light_text td_width">Posting
-                <td class=" light_text">|
-                </td>
+              <td class=" light_text">|
+              </td>
               </td>
               <td class="td_width">
                 <span class="date-label ">Start date</span> <br>
-                <strong class="date">10/10/2024</strong> 
+                <strong class="date">10/10/2024</strong>
               </td>
-              <td class="td_width"><span class="date-label ">End date</span> 
+              <td class="td_width"><span class="date-label ">End date</span>
                 <strong class="date">25/10/2024</strong>
               </td>
             </tr>
-         
+
           </table>
-          
+
         </div>
+      </div>
+
 
         <!-- Deliverables -->
+        <div class="section-box">
+
         <div class="deliverables">
           <h5 class="brand-name">Deliverable Task</h5>
           <button class="btn btn-warning">Posts - 2</button>
@@ -337,8 +464,10 @@ input[type="checkbox"] {
           <button class="btn btn-warning ">Stories - 4</button>
 
         </div>
+        </div>
 
         <!-- Alerts -->
+         <div class="section-box">
         <div class="alerts">
           <h5 class="brand-name">Alerts</h5>
           <ul class="alert-list">
@@ -350,10 +479,12 @@ input[type="checkbox"] {
           </ul>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

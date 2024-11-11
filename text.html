@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag Account, Criteria, and Guidelines</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styling */
+    .section-box {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-weight: bold;
+      color: #007bff;
+    }
+    .tag-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .tag-buttons .btn {
+      background: #f1f1f1;
+      border: 1px solid transparent;
+      color: #333;
+      border-radius: 20px;
+      padding: 5px 15px;
+    }
+    .tag-buttons .btn.active {
+      border-color: #007bff;
+      color: #007bff;
+      background-color: #fff;
+    }
+    .criteria-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .criteria-item {
+      margin-bottom: 10px;
+    }
+    .criteria-item span {
+      font-weight: bold;
+    }
+    .download-section {
+      display: flex;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+    .download-section img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+      border-radius: 5px;
+    }
+    .download-section .download-text {
+      flex-grow: 1;
+    }
+    .download-section .download-icon {
+      font-size: 20px;
+      color: #007bff;
+      cursor: pointer;
+    }
+    .guideline-title {
+      color: #007bff;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .guideline-text {
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Tag Account Section -->
+  <div class="section-box">
+    <div class="section-title">Tag Account</div>
+    <div class="tag-buttons">
+      <button class="btn" onclick="toggleActive(this)">Tag account 1</button>
+      <button class="btn" onclick="toggleActive(this)">Tag account 2</button>
+      <button class="btn" onclick="toggleActive(this)">Tag account 3</button>
+    </div>
+  </div>
+
+  <!-- Criteria Section -->
+  <div class="section-box">
+    <div class="section-title">Criteria</div>
+    <div class="criteria-list">
+      <div class="criteria-item">
+        Age: <span>18 - 25 Years</span>
+      </div>
+      <div class="criteria-item">
+        Gender: <span>Male/Female</span>
+      </div>
+      <div class="criteria-item">
+        Followers: <span>Above 200k</span>
+      </div>
+      <div class="criteria-item">
+        Engagement: <span>3%</span>
+      </div>
+      <div class="criteria-item">
+        Participant: <span>Limit (1,2,3)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brand Guidelines Section -->
+  <div class="section-box">
+    <div class="section-title">Brand Guidelines</div>
+    <div class="download-section">
+      <img src="https://via.placeholder.com/50" alt="Brand Logo">
+      <div class="download-text">Brand Guidelines download</div>
+      <div class="download-icon">
+        <i class="fas fa-download"></i>
+      </div>
+    </div>
+
+    <!-- Community Guidelines Text -->
+    <div class="guideline-title">Community Guidelines</div>
+    <p class="guideline-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <!-- Terms of Collaboration Text -->
+    <div class="guideline-title">Terms of Collaboration</div>
+    <p class="guideline-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+</div>
+
+<script>
+  // JavaScript function to toggle active state
+  function toggleActive(button) {
+    // Remove 'active' class from all buttons
+    const buttons = document.querySelectorAll('.tag-buttons .btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add 'active' class to the clicked button
+    button.classList.add('active');
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

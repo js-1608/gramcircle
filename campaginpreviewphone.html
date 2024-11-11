@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campaign Preview</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom styling to match the design closely */
+    .campaign-container {
+      max-width: 400px;
+      background: #f9f9f9;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .campaign-header {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .campaign-header img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .badge-price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .campaign-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .location {
+      color: #555;
+      margin-top: 5px;
+    }
+    .tab-section .nav-tabs .nav-link.active {
+      background: #ffc107;
+      color: #fff;
+    }
+    .compensation-section, .criteria-section, .timelines-section, .deliverable-section, .guidelines-section {
+      padding: 15px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .deliverable-tasks, .alerts {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .btn-download {
+      color: #007bff;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .btn-download i {
+      margin-right: 5px;
+    }
+    .terms-section, .community-section {
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="campaign-container">
+  <div class="campaign-header">
+    <span class="badge-price">$200 - $800</span>
+    <img src="placeholder-image.jpg" alt="Campaign Image">
+    <p class="campaign-title mt-3">Global Footsteps - Beauty From Around The World - New Product Launch</p>
+    <p class="location"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+  </div>
+  
+  <div class="d-flex justify-content-around p-3">
+    <img src="placeholder1.jpg" alt="Image 1" class="img-thumbnail" style="width: 30%;">
+    <img src="placeholder2.jpg" alt="Image 2" class="img-thumbnail" style="width: 30%;">
+    <img src="placeholder3.jpg" alt="Image 3" class="img-thumbnail" style="width: 30%;">
+  </div>
+  
+  <ul class="nav nav-tabs tab-section" id="campaignTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab">About Promotion</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="collab-tab" data-toggle="tab" href="#collab" role="tab">Collaboration Details</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="campaignTabContent">
+    <div class="tab-pane fade show active" id="about" role="tabpanel">
+      <div class="compensation-section">
+        <h5>Compensations</h5>
+        <p><strong>Creator Benefit:</strong> Product</p>
+        <p><strong>Fulfillment Mode:</strong> Direct Shipping</p>
+        <p><strong>Reward Details:</strong> Barter</p>
+      </div>
+      
+      <div class="criteria-section">
+        <h5>Criteria</h5>
+        <p>Age: 18-25 Years</p>
+        <p>Gender: Male/Female</p>
+        <p>Followers: Above 200k</p>
+        <p>Engagement: 3%</p>
+        <p>Participants Limit: (1,2,3)</p>
+      </div>
+      
+      <div class="timelines-section">
+        <h5>Timelines</h5>
+        <p>Sign-up Start: 10/10/2024</p>
+        <p>End Date: 25/10/2024</p>
+        <p>Product Delivery: 10/10/2024 - 25/10/2024</p>
+        <p>Posting Start: 10/10/2024</p>
+      </div>
+
+      <div class="deliverable-section">
+        <h5>Deliverable Tasks</h5>
+        <div class="deliverable-tasks">
+          <p>Posts: 2</p>
+          <p>Reels: 2</p>
+          <p>Stories: 4</p>
+        </div>
+      </div>
+
+      <div class="alerts">
+        <label><input type="checkbox" checked> Approved to participate</label>
+        <label><input type="checkbox" checked> Voucher Redemption</label>
+        <label><input type="checkbox" checked> Event Details</label>
+      </div>
+
+      <div class="guidelines-section">
+        <h5>Brand Guidelines</h5>
+        <a href="#" class="btn-download"><i class="fas fa-download"></i> Download Guidelines</a>
+      </div>
+
+      <div class="community-section">
+        <h5>Community Guidelines</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div class="terms-section">
+        <h5>Terms of Collaboration</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

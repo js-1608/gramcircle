@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set New Password</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .password-section {
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .password-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .password-icon i {
+            font-size: 24px;
+            color: #0050ff;
+        }
+
+        .confirm-btn {
+            background-color: #ffeb3b;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="password-section text-center">
+            <div class="password-icon">
+                <i class="fas fa-key"></i>
+            </div>
+            <h3 class="font-weight-bold">Set your new password</h3>
+            <p>Enter New password below</p>
+            <form>
+                <div class="form-group text-left">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter new password">
+                </div>
+                <div class="form-group text-left">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                </div>
+                <button type="submit" class="btn confirm-btn btn-block">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
